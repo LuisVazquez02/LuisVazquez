@@ -24,7 +24,8 @@
             text-align: center;
             z-index: 9999;
             opacity: 1;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            visibility: visible;
+            transition: opacity 1s ease, visibility 1s ease;
         }
         .loading-screen.hidden {
             opacity: 0;
@@ -49,6 +50,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Evita el desbordamiento horizontal */
+            display: none; /* Ocultar el contenido de la página principal inicialmente */
         }
         .container {
             max-width: 1000px;
@@ -233,7 +235,7 @@
 
                 <div class="section">
                     <h2>Education</h2>
-                    <p><strong>Chemical Laboratory Technician</strong>, CBTIS No. 128 (2017 - 2020)</p>
+                    <p><strong>Chemical Laboratory Technology</strong>, IPN (2017 - 2019)</p>
                     <p>Specializing in Chemical Laboratory Technology, gaining skills in chemical analysis, lab techniques, and safety protocols.</p>
 
                     <p><strong>Aeronautical Engineering</strong>, UACJ (2020 - 2024)</p>
@@ -314,9 +316,16 @@
     </div>
 
     <script>
-        // Ocultar la pantalla de carga una vez que la página se haya cargado
         window.addEventListener('load', () => {
-            document.querySelector('.loading-screen').classList.add('hidden');
+            // Ocultar la pantalla de carga y mostrar el contenido principal con animación
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.querySelector('.container');
+            
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                document.body.style.display = 'block'; // Mostrar el contenido de la página principal
+                mainContent.style.opacity = 1; // Animar la opacidad del contenido principal
+            }, 2000); // Tiempo de visualización de la pantalla de carga en milisegundos
         });
     </script>
 </body>
