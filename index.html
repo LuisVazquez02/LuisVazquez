@@ -408,12 +408,17 @@
 
     <script>
         window.addEventListener('load', () => {
+            const totalDuration = 3; // Duración total en segundos
+            const displayDuration = 0.1; // Duración de cada saludo en segundos
+            const totalSteps = 30; // Número total de saludos
+        
             setTimeout(() => {
                 document.getElementById('loading-screen').classList.add('hidden');
                 document.getElementById('main-content').style.opacity = '1';
                 document.getElementById('main-content').style.visibility = 'visible';
-            }, 3000); // Tiempo de duración de la pantalla de carga (en milisegundos)
+            }, totalDuration * 1000); // Tiempo de duración total de la pantalla de carga (en milisegundos)
         });
+
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
