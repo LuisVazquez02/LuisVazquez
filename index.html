@@ -14,7 +14,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: #000;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -24,7 +24,7 @@
             text-align: center;
             z-index: 9999;
             opacity: 1;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
         .loading-screen.hidden {
             opacity: 0;
@@ -32,6 +32,15 @@
         }
         .loading-screen .greeting {
             margin: 10px;
+        }
+        .greeting p {
+            margin: 0;
+            animation: fadeInOut 20s ease-in-out infinite;
+            font-size: 24px;
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            5%, 20% { opacity: 1; }
         }
 
         body {
@@ -181,13 +190,14 @@
     </style>
 </head>
 <body>
+    <!-- Pantalla de carga -->
     <div class="loading-screen">
         <div class="greeting">
-            <p>Hello! / ¡Hola! / Bonjour! / Guten Tag! / Ciao! / こんにちは! / 안녕하세요!</p>
-            <p>Welcome to my CV!</p>
+            <p>Hello! / ¡Hola! / Bonjour! / Guten Tag! / Ciao! / こんにちは! / 안녕하세요! / Merhaba! / ሰላም! / สวัสดี! / 你好! / สบายดี! / Salaam! / Szia! / Hola! / Kamusta! / สวัสดี! / Sveiki! / Hola! / Hello!</p>
         </div>
     </div>
 
+    <!-- Contenido principal -->
     <div class="container">
         <div class="title-box">
             <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
