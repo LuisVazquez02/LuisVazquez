@@ -43,26 +43,37 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            animation: changeText 4.5s steps(15) infinite;
+            opacity: 0;
+            animation: fadeInOut 1.5s ease-in-out infinite;
         }
-        @keyframes changeText {
-            0% { transform: translateY(0); }
-            6.66% { transform: translateY(-100%); }
-            13.33% { transform: translateY(-200%); }
-            20% { transform: translateY(-300%); }
-            26.66% { transform: translateY(-400%); }
-            33.33% { transform: translateY(-500%); }
-            40% { transform: translateY(-600%); }
-            46.66% { transform: translateY(-700%); }
-            53.33% { transform: translateY(-800%); }
-            60% { transform: translateY(-900%); }
-            66.66% { transform: translateY(-1000%); }
-            73.33% { transform: translateY(-1100%); }
-            80% { transform: translateY(-1200%); }
-            86.66% { transform: translateY(-1300%); }
-            93.33% { transform: translateY(-1400%); }
-            100% { transform: translateY(-1500%); }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            30% { opacity: 1; }
+            40% { opacity: 0; }
+            100% { opacity: 0; }
         }
+        /* Para que cada saludo tenga un retraso diferente */
+        .loading-screen .greeting p:nth-child(1) { animation-delay: 0s; }
+        .loading-screen .greeting p:nth-child(2) { animation-delay: 1.5s; }
+        .loading-screen .greeting p:nth-child(3) { animation-delay: 3s; }
+        .loading-screen .greeting p:nth-child(4) { animation-delay: 4.5s; }
+        .loading-screen .greeting p:nth-child(5) { animation-delay: 6s; }
+        .loading-screen .greeting p:nth-child(6) { animation-delay: 7.5s; }
+        .loading-screen .greeting p:nth-child(7) { animation-delay: 9s; }
+        .loading-screen .greeting p:nth-child(8) { animation-delay: 10.5s; }
+        .loading-screen .greeting p:nth-child(9) { animation-delay: 12s; }
+        .loading-screen .greeting p:nth-child(10) { animation-delay: 13.5s; }
+        .loading-screen .greeting p:nth-child(11) { animation-delay: 15s; }
+        .loading-screen .greeting p:nth-child(12) { animation-delay: 16.5s; }
+        .loading-screen .greeting p:nth-child(13) { animation-delay: 18s; }
+        .loading-screen .greeting p:nth-child(14) { animation-delay: 19.5s; }
+        .loading-screen .greeting p:nth-child(15) { animation-delay: 21s; }
+        .loading-screen .greeting p:nth-child(16) { animation-delay: 22.5s; }
+        .loading-screen .greeting p:nth-child(17) { animation-delay: 24s; }
+        .loading-screen .greeting p:nth-child(18) { animation-delay: 25.5s; }
+        .loading-screen .greeting p:nth-child(19) { animation-delay: 27s; }
+        .loading-screen .greeting p:nth-child(20) { animation-delay: 28.5s; }
 
         /* Estilos para la página principal */
         body {
@@ -208,162 +219,99 @@
             background-color: #003366;
         }
         .download-icon i {
-            font-size: 20px;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
-    <!-- Pantalla de carga -->
-    <div class="loading-screen" id="loading-screen">
+    <div class="loading-screen">
         <div class="greeting">
-            <p>Hello!</p>
             <p>¡Hola!</p>
-            <p>Bonjour!</p>
-            <p>Guten Tag!</p>
-            <p>Ciao!</p>
-            <p>こんにちは!</p>
-            <p>안녕하세요!</p>
-            <p>Merhaba!</p>
-            <p>你好!</p>
-            <p>Salut!</p>
-            <p>Olá!</p>
-            <p>Hej!</p>
-            <p>Hallo!</p>
-            <p>Hola!</p>
-            <p>שלום!</p>
-            <p>Szia!</p>
-            <p>नमस्ते!</p>
-            <p>สวัสดี!</p>
-            <p>مرحبا!</p>
-            <p>Salam!</p>
-            <p>Բարև!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
+            <p>¡Bonjour!</p>
+            <p>¡Hola!</p>
+            <p>¡Hello!</p>
         </div>
     </div>
-
-    <!-- Contenido principal -->
-    <div class="container" id="main-content">
+    
+    <div class="container">
         <div class="title-box">
-            <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
-            <div class="contact-info">
-                <h1>Luis Eduardo Vazquez Nuñez</h1>
-                <div class="contact-details">
-                    <div>
-                        <i class="fas fa-envelope"></i>
-                        <p>Email: <a href="mailto:luisvzne@gmail.com">luisvzne@gmail.com</a></p>
-                    </div>
-                    <div>
-                        <i class="fas fa-phone"></i>
-                        <p>Phone: +52 656-533-5118</p>
-                    </div>
-                    <div>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Location: Juárez, México</p>
-                    </div>
-                    <div>
-                        <i class="fab fa-linkedin"></i>
-                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn Profile</a></p>
-                    </div>
-                </div>
+            <img src="https://via.placeholder.com/150" alt="Luis Eduardo Vazquez Nuñez">
+            <h1>Luis Eduardo Vazquez Nuñez</h1>
+            <p class="contact-info">
+                <a href="mailto:email@example.com">email@example.com</a>
+            </p>
+            <div class="contact-details">
+                <div><i class="fas fa-phone"></i><p>+123 456 7890</p></div>
+                <div><i class="fas fa-map-marker-alt"></i><p>Ciudad, País</p></div>
+                <div><i class="fas fa-linkedin"></i><p><a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn</a></p></div>
             </div>
         </div>
-
         <div class="main-content">
             <div class="left-panel">
                 <div class="section">
-                    <h2>Profile</h2>
-                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
+                    <h2>Resumen</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
                 </div>
-
                 <div class="section">
-                    <h2>Education</h2>
-                    <p><strong>Chemical Laboratory Technology</strong>, IPN (2017 - 2019)</p>
-                    <p>Specializing in Chemical Laboratory Technology, gaining skills in chemical analysis, lab techniques, and safety protocols.</p>
-
-                    <p><strong>Aeronautical Engineering</strong>, UACJ (2020 - 2024)</p>
-                    <p>As an Aerospace Engineering student, I focus on designing and maintaining aircraft and spacecraft, driven by my passion for advancing aerospace technology.</p>
-                    <ul>
-                        <li>Thesis: Coatings and electrochemical corrosion</li>
-                    </ul>
+                    <h2>Educación</h2>
+                    <p>Universidad X - Ingeniería en Aeronáutica</p>
                 </div>
-
                 <div class="section">
-                    <h2>Work Experience</h2>
-                    <p><strong>Planning Trainee</strong>, BRP (Dec 2024 - Aug 2024)</p>
-                    <p>Coordination, Supply chain Inventory management, Communication, Analysis, Planning.</p>
-                    <ul>
-                        <li>Problem-solving</li>
-                        <li>Time management</li>
-                        <li>Meetings with Canadian and American suppliers</li>
-                        <li>Pre-shipment confirmation</li>
-                        <li>Tools: Microsoft Office (Excel - Macros), SAP</li>
-                    </ul>
+                    <h2>Experiencia</h2>
+                    <p>Empresa Y - Ingeniero de Aeronáutica</p>
                 </div>
-
                 <div class="section">
-                    <h2>Certificates</h2>
-                    <p><strong>Corrosion engineering and protection methods</strong> (Jan 2024)</p>
-                    <p><strong>Six Sigma</strong> (In progress)</p>
-                </div>
-
-                <div class="section">
-                    <h2>Interests</h2>
-                    <p>I have a strong passion for engineering and technology, with a deep interest in the repair and maintenance of complex systems, from automobiles to electronic devices. My fascination extends to aeronautical engineering and the technical intricacies behind airplanes. Additionally, I am enthusiastic about the wide applications of technology, including advancements in the medical, automotive, and electronic industries, as well as my expertise in computers and programming.</p>
+                    <h2>Habilidades</h2>
+                    <div class="skills">
+                        <div class="skill">
+                            <p><span class="highlight">C++</span></p>
+                            <div class="skill-level"><div style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill">
+                            <p><span class="highlight">Python</span></p>
+                            <div class="skill-level"><div style="width: 90%;"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div class="right-panel">
                 <div class="section">
-                    <h2>Programming and Software</h2>
-                    <div class="skills">
-                        <p>LaTeX</p>
-                        <div class="skill-level"><div style="width: 90%;"></div></div>
-                        <p>Python</p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
-                        <p>MATLAB</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
-                        <div class="skill-level"><div style="width: 90%;"></div></div>
-                        <p>Visual Basic</p>
-                        <div class="skill-level"><div style="width: 60%;"></div></div>
-                        <p>Autocad</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                        <p>Ansys</p>
-                        <div class="skill-level"><div style="width: 60%;"></div></div>
-                        <p>Solidworks</p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
-                        <p>Minitab</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                        <p>SAP</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                    </div>
-                </div>
-
-                <div class="section">
-                    <h2>Languages</h2>
+                    <h2>Idiomas</h2>
                     <div class="languages">
-                        <p>English</p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
-                        <p>Spanish</p>
-                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Español - Avanzado</p>
+                        <p>Inglés - Intermedio</p>
+                        <p>Francés - Básico</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="download-icon">
-            <i class="fas fa-download"></i>
-            <p>Download CV</p>
-        </div>
     </div>
-
+    <div class="download-icon">
+        <i class="fas fa-download"></i>
+    </div>
     <script>
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loading-screen').classList.add('hidden');
-                document.getElementById('main-content').style.opacity = '1';
-                document.getElementById('main-content').style.visibility = 'visible';
-            }, 3000); // Tiempo de duración de la pantalla de carga (en milisegundos)
-        });
+        // Simulación de carga para ocultar la pantalla de carga después de 5 segundos
+        setTimeout(function() {
+            document.querySelector('.loading-screen').classList.add('hidden');
+            document.querySelector('.container').style.opacity = '1';
+            document.querySelector('.container').style.visibility = 'visible';
+        }, 5000);
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
