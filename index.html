@@ -19,6 +19,7 @@
             background: #fff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Necesario para posicionar el ícono de descarga en la parte inferior */
         }
         .title-box {
             display: flex;
@@ -26,8 +27,8 @@
             color: #fff; /* Color blanco para el texto */
             padding: 20px;
             align-items: center;
-            justify-content: center; /* Centrado de los elementos en el contenedor */
             flex-direction: column; /* Coloca los elementos en una columna */
+            text-align: center; /* Centra el texto */
         }
         .title-box img {
             width: 150px;
@@ -36,10 +37,9 @@
         }
         .contact-info {
             font-size: 18px;
-            text-align: center; /* Centra el texto */
         }
         .contact-info a {
-            color: #66b3ff; /* Color azul claro para enlaces */
+            color: #ffcc00; /* Color amarillo para enlaces */
             text-decoration: none;
         }
         .contact-info a:hover {
@@ -56,11 +56,11 @@
         }
         .contact-details i {
             font-size: 24px; /* Tamaño de los íconos */
-            color: #1e90ff; /* Color azul brillante para los íconos */
+            color: #000; /* Color negro para los íconos */
         }
         .contact-details p {
             margin: 5px 0 0 0; /* Margen superior para el texto debajo de los íconos */
-            color: #003366; /* Color azul oscuro para el texto */
+            color: #fff; /* Color blanco para el texto */
         }
         .main-content {
             display: flex;
@@ -106,6 +106,24 @@
         .highlight {
             font-weight: 700; /* Negritas para resaltar texto */
             color: #003366; /* Color azul oscuro para resaltar */
+        }
+        .download-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #004080; /* Fondo azul oscuro para el ícono */
+            color: #fff; /* Color blanco para el ícono */
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-align: center;
+        }
+        .download-icon:hover {
+            background-color: #003366; /* Fondo azul más oscuro en hover */
+        }
+        .download-icon i {
+            font-size: 20px;
         }
     </style>
 </head>
@@ -185,12 +203,24 @@
                     <h2>Programming and Software</h2>
                     <div class="skills">
                         <p>LaTeX</p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
                         <p>Python</p>
-                        <div class="skill-level"><div style="width: 40%;"></div></div>
-                        <p>Microsoft Office</p>
-                        <div class="skill-level"><div style="width: 100%;"></div></div>
-                        <p>Excel (Visual-Basic)</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>MATLAB</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Visual Basic</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Autocad</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Ansys</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Solidworks</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>Minitab</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>SAP</p>
                         <div class="skill-level"><div style="width: 70%;"></div></div>
                     </div>
                 </div>
@@ -198,15 +228,19 @@
                 <div class="section">
                     <h2>Languages</h2>
                     <div class="languages">
-                        <p>English: Advanced</p>
-                        <p>Spanish: Native</p>
+                        <p>English</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>Spanish</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="download-icon" onclick="window.location.href='Luis_Eduardo_Vazquez_Nuñez.pdf';">
+            <i class="fas fa-download"></i>
+            <br>Download
+        </div>
     </div>
 </body>
 </html>
-
-
-
