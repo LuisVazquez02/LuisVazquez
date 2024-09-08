@@ -48,13 +48,7 @@
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
             opacity: 0; /* Inicialmente invisible */
-            animation: showText 3s steps(30) infinite;
-        }
-        
-        @keyframes showText {
-            0% { opacity: 0; }
-            3% { opacity: 1; }
-            10% { opacity: 0; }
+            transition: opacity 0.1s; /* Ajustar la transición a 0.1 segundos */
         }
 
 
@@ -217,45 +211,43 @@
 <body>
     <!-- Pantalla de carga -->
     <div class="loading-screen" id="loading-screen">
-            <div class="greeting">
-                <p>Hello!</p>
-                <p>¡Hola!</p>
-                <p>Bonjour!</p>
-                <p>Guten Tag!</p>
-                <p>Ciao!</p>
-                <p>こんにちは!</p>
-                <p>안녕하세요!</p>
-                <p>Merhaba!</p>
-                <p>你好!</p>
-                <p>Salut!</p>
-                <p>Olá!</p>
-                <p>Hej!</p>
-                <p>Hallo!</p>
-                <p>Hola!</p>
-                <p>שלום!</p>
-                <p>Szia!</p>
-                <p>नमस्ते!</p>
-                <p>สวัสดี!</p>
-                <p>مرحبا!</p>
-                <p>Salam!</p>
-                <p>Բարև!</p>
-                <p>γειά σας!</p> <!-- Griego -->
-                <p>שלום!</p> <!-- Hebreo -->
-                <p>Merhaba!</p> <!-- Turco -->
-                <p>Hola!</p> <!-- Español -->
-                <p>你好!</p> <!-- Chino Simplificado -->
-                <p>Olá!</p> <!-- Portugués -->
-                <p>Hej!</p> <!-- Sueco -->
-                <p>Hallo!</p> <!-- Alemán -->
-                <p>Ciao!</p> <!-- Italiano -->
-                <p>こんにちは!</p> <!-- Japonés -->
-                <p>안녕하세요!</p> <!-- Coreano -->
-                <p>Bonjour!</p> <!-- Francés -->
-                <p>Guten Tag!</p> <!-- Alemán -->
-                <p>Hello!</p> <!-- Inglés -->
-                <p>¡Hola!</p> <!-- Español -->
-            </div>
+        <div class="greeting">
+            <p>Hello!</p>
+            <p>¡Hola!</p>
+            <p>Bonjour!</p>
+            <p>Guten Tag!</p>
+            <p>Ciao!</p>
+            <p>こんにちは!</p>
+            <p>안녕하세요!</p>
+            <p>Merhaba!</p>
+            <p>你好!</p>
+            <p>Salut!</p>
+            <p>Olá!</p>
+            <p>Hej!</p>
+            <p>Hallo!</p>
+            <p>Hola!</p>
+            <p>שלום!</p>
+            <p>Szia!</p>
+            <p>नमस्ते!</p>
+            <p>สวัสดี!</p>
+            <p>مرحبا!</p>
+            <p>Salam!</p>
+            <p>Բարև!</p>
+            <p>¡Hola!</p>
+            <p>Olá!</p>
+            <p>Bonjour!</p>
+            <p>Guten Tag!</p>
+            <p>Ciao!</p>
+            <p>こんにちは!</p>
+            <p>안녕하세요!</p>
+            <p>Merhaba!</p>
+            <p>你好!</p>
+            <p>Salut!</p>
+            <p>Hej!</p>
+            <p>Hallo!</p>
+            <p>¡Hola!</p>
         </div>
+    </div>
 
     <!-- Contenido principal -->
     <div class="container" id="main-content">
@@ -377,33 +369,35 @@
 
 
     <script>
-        window.addEventListener('load', () => {
+         window.addEventListener('load', () => {
             const totalDuration = 3; // Duración total en segundos
+            const durationPerGreeting = 0.1; // Duración de cada saludo en segundos
             const numGreetings = document.querySelectorAll('.loading-screen .greeting p').length;
-            const displayDuration = totalDuration / numGreetings; // Duración de cada saludo
+            
+            const cycleDuration = numGreetings * durationPerGreeting; // Duración de un ciclo completo
+            const numCycles = Math.ceil(totalDuration / cycleDuration); // Número de ciclos necesarios
         
-            const updateAnimation = () => {
+            let currentGreetingIndex = 0;
+        
+            const showNextGreeting = () => {
                 const greetings = document.querySelectorAll('.loading-screen .greeting p');
-                let currentIndex = 0;
-        
-                setInterval(() => {
-                    greetings.forEach((greeting, index) => {
-                        greeting.style.opacity = index === currentIndex ? '1' : '0';
-                    });
-                    currentIndex = (currentIndex + 1) % numGreetings;
-                }, displayDuration * 1000); // Convertir a milisegundos
+                greetings.forEach((greeting, index) => {
+                    greeting.style.opacity = index === currentGreetingIndex ? '1' : '0';
+                });
+                currentGreetingIndex = (currentGreetingIndex + 1) % numGreetings;
             };
         
-            updateAnimation();
+            const intervalId = setInterval(() => {
+                showNextGreeting();
+            }, durationPerGreeting * 1000); // Convertir a milisegundos
         
             setTimeout(() => {
+                clearInterval(intervalId); // Detener el intervalo
                 document.getElementById('loading-screen').classList.add('hidden');
                 document.getElementById('main-content').style.opacity = '1';
                 document.getElementById('main-content').style.visibility = 'visible';
-            }, totalDuration * 1000); // Tiempo de duración total de la pantalla de carga (en milisegundos)
+            }, totalDuration * 1000); // Tiempo total en milisegundos
         });
 
-    </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
