@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Luis Eduardo Vázquez Núñez</title>
+    <title>CV - Luis Eduardo Vazquez Nuñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-
         /* Estilos de la pantalla de carga */
         .loading-screen {
             position: fixed;
@@ -25,21 +24,18 @@
             z-index: 9999;
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 1s ease, visibility 1s ease;
         }
-        
         .loading-screen.hidden {
             opacity: 0;
             visibility: hidden;
         }
-        
         .loading-screen .greeting {
             position: relative;
             width: 300px; /* Ajusta el ancho según sea necesario */
             height: 60px; /* Ajusta la altura según sea necesario */
             overflow: hidden;
         }
-        
         .loading-screen .greeting p {
             position: absolute;
             width: 100%;
@@ -47,18 +43,26 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            opacity: 0; /* Inicialmente oculto */
-            animation: fadeInOut 1s forwards; /* Tiempo de animación de cada saludo */
+            animation: changeText 4.5s steps(15) infinite;
         }
-        
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            40% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 0; }
+        @keyframes changeText {
+            0% { transform: translateY(0); }
+            6.66% { transform: translateY(-100%); }
+            13.33% { transform: translateY(-200%); }
+            20% { transform: translateY(-300%); }
+            26.66% { transform: translateY(-400%); }
+            33.33% { transform: translateY(-500%); }
+            40% { transform: translateY(-600%); }
+            46.66% { transform: translateY(-700%); }
+            53.33% { transform: translateY(-800%); }
+            60% { transform: translateY(-900%); }
+            66.66% { transform: translateY(-1000%); }
+            73.33% { transform: translateY(-1100%); }
+            80% { transform: translateY(-1200%); }
+            86.66% { transform: translateY(-1300%); }
+            93.33% { transform: translateY(-1400%); }
+            100% { transform: translateY(-1500%); }
         }
-
 
         /* Estilos para la página principal */
         body {
@@ -187,60 +191,52 @@
             font-weight: 700;
             color: #003366;
         }
-    /* Estilos para el icono de descarga */
-    .download-icon {
-        position: fixed; /* Mantener en la pantalla */
-        bottom: 20px;
-        right: 20px;
-        background-color: #004080; /* Azul que armoniza con el fondo */
-        color: #000000;
-        padding: 15px;
-        border-radius: 12px; /* Esquinas más suaves */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
-        cursor: pointer;
-        text-align: center;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .download-icon:hover {
-        background-color: #003366; /* Azul más oscuro al pasar el cursor */
-        transform: scale(1.05); /* Efecto de aumento */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el cursor */
-    }
-    
-    .download-icon i {
-        font-size: 24px; /* Tamaño del ícono */
-        margin-bottom: 5px; /* Espacio entre ícono y texto */
-    }
-    
-    .download-icon div {
-        font-size: 14px; /* Tamaño del texto */
-        font-weight: bold; /* Texto en negrita */
-        margin-top: 5px; /* Espacio entre texto e ícono */
-    }
-
-
-
+        .download-icon {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #004080;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .download-icon:hover {
+            background-color: #003366;
+        }
+        .download-icon i {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <!-- Pantalla de carga -->
     <div class="loading-screen" id="loading-screen">
         <div class="greeting">
-            <p>Hola</p>
-            <p>Bonjour</p>
-            <p>Hello</p>
-            <p>Ciao</p>
-            <p>Hallo</p>
-            <p>Olá</p>
-            <p>Привет</p>
-            <p>こんにちは</p>
-            <p>안녕하세요</p>
-            <p>Merhaba</p>
-            <p>Hej</p>
-            <p>Hei</p>
-            <p>Salut</p>
-            <p>Guten Tag</p>
+            <p>Hello!</p>
+            <p>¡Hola!</p>
+            <p>Bonjour!</p>
+            <p>Guten Tag!</p>
+            <p>Ciao!</p>
+            <p>こんにちは!</p>
+            <p>안녕하세요!</p>
+            <p>Merhaba!</p>
+            <p>你好!</p>
+            <p>Salut!</p>
+            <p>Olá!</p>
+            <p>Hej!</p>
+            <p>Hallo!</p>
+            <p>Hola!</p>
+            <p>שלום!</p>
+            <p>Szia!</p>
+            <p>नमस्ते!</p>
+            <p>สวัสดี!</p>
+            <p>مرحبا!</p>
+            <p>Salam!</p>
+            <p>Բարև!</p>
         </div>
     </div>
 
@@ -275,7 +271,7 @@
             <div class="left-panel">
                 <div class="section">
                     <h2>Profile</h2>
-                    <p>Described as dedicated and eager to learn, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
+                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
                 </div>
 
                 <div class="section">
@@ -348,35 +344,27 @@
                         <p>English</p>
                         <div class="skill-level"><div style="width: 80%;"></div></div>
                         <p>Spanish</p>
-                        <div class="skill-level"><div style="width: 100%;"></div></div>
-                        <p>French</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
 
-    <!-- Scripts -->
-    window.addEventListener('load', () => {
-        const totalDuration = 5000; // Tiempo total de la pantalla de carga en milisegundos
-        const numberOfGreetings = 18; // Número total de saludos
-        const timePerGreeting = totalDuration / numberOfGreetings; // Tiempo por saludo
-    
-        // Establece el tiempo de animación y el retraso para cada saludo
-        document.querySelectorAll('.loading-screen .greeting p').forEach((element, index) => {
-            element.style.animationDuration = `${timePerGreeting}ms`;
-            element.style.animationDelay = `${index * timePerGreeting}ms`;
-        });
-    
-        // Transición a la página principal después del tiempo total
-        setTimeout(() => {
-            document.getElementById('loading-screen').classList.add('hidden');
-            document.getElementById('main-content').style.opacity = '1';
-            document.getElementById('main-content').style.visibility = 'visible';
-        }, totalDuration); // Tiempo total de la pantalla de carga
-    });
+        <div class="download-icon">
+            <i class="fas fa-download"></i>
+            <p>Download CV</p>
+        </div>
+    </div>
 
-        
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('main-content').style.opacity = '1';
+                document.getElementById('main-content').style.visibility = 'visible';
+            }, 3000); // Tiempo de duración de la pantalla de carga (en milisegundos)
+        });
     </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
