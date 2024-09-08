@@ -191,32 +191,38 @@
             font-weight: 700;
             color: #003366;
         }
-        /* Estilos para el icono de descarga */
-        .download-icon {
-            position: fixed; /* Mantener en la pantalla */
-            bottom: 20px;
-            right: 20px;
-            background-color: #003366; /* Color azul oscuro acorde al diseño */
-            color: #fff;
-            padding: 15px;
-            border-radius: 10px; /* Esquinas redondeadas */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra sutil */
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .download-icon:hover {
-            background-color: #002244; /* Azul más oscuro al pasar el cursor */
-            transform: scale(1.05); /* Efecto de aumento */
-        }
-        .download-icon i {
-            font-size: 24px; /* Tamaño del ícono */
-            margin-bottom: 5px; /* Espacio entre ícono y texto */
-        }
-        .download-icon div {
-            font-size: 14px; /* Tamaño del texto */
-            font-weight: bold; /* Texto en negrita */
-        }
+    /* Estilos para el icono de descarga */
+    .download-icon {
+        position: fixed; /* Mantener en la pantalla */
+        bottom: 20px;
+        right: 20px;
+        background-color: #004080; /* Azul que armoniza con el fondo */
+        color: #fff;
+        padding: 15px;
+        border-radius: 12px; /* Esquinas más suaves */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .download-icon:hover {
+        background-color: #003366; /* Azul más oscuro al pasar el cursor */
+        transform: scale(1.05); /* Efecto de aumento */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el cursor */
+    }
+    
+    .download-icon i {
+        font-size: 24px; /* Tamaño del ícono */
+        margin-bottom: 5px; /* Espacio entre ícono y texto */
+    }
+    
+    .download-icon div {
+        font-size: 14px; /* Tamaño del texto */
+        font-weight: bold; /* Texto en negrita */
+        margin-top: 5px; /* Espacio entre texto e ícono */
+    }
+
 
 
     </style>
@@ -346,7 +352,9 @@
                         <p>English</p>
                         <div class="skill-level"><div style="width: 80%;"></div></div>
                         <p>Spanish</p>
-                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <div class="skill-level"><div style="width: 100%;"></div></div>
+                        <p>Frenc</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
                     </div>
                 </div>
             </div>
