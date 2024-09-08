@@ -14,7 +14,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: #000; /* Fondo negro */
             color: #fff;
             display: flex;
             justify-content: center;
@@ -33,15 +33,16 @@
         }
         .loading-screen .greeting {
             margin: 10px;
+            white-space: nowrap; /* Evita el salto de línea */
+            animation: fadeInOut 20s ease-in-out infinite;
         }
         .greeting p {
             margin: 0;
-            animation: fadeInOut 20s ease-in-out infinite;
-            font-size: 24px;
         }
         @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
+            0% { opacity: 0; }
             5%, 20% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         body {
@@ -195,7 +196,26 @@
     <!-- Pantalla de carga -->
     <div class="loading-screen" id="loading-screen">
         <div class="greeting">
-            <p>Hello! / ¡Hola! / Bonjour! / Guten Tag! / Ciao! / こんにちは! / 안녕하세요! / Merhaba! / ሰላም! / สวัสดี! / 你好! / สบายดี! / Salaam! / Szia! / Hola! / Kamusta! / สวัสดี! / Sveiki! / Hola! / Hello!</p>
+            <p>Hello!</p>
+            <p>¡Hola!</p>
+            <p>Bonjour!</p>
+            <p>Guten Tag!</p>
+            <p>Ciao!</p>
+            <p>こんにちは!</p>
+            <p>안녕하세요!</p>
+            <p>Merhaba!</p>
+            <p>ሰላም!</p>
+            <p>สวัสดี!</p>
+            <p>你好!</p>
+            <p>สบายดี!</p>
+            <p>Salaam!</p>
+            <p>Szia!</p>
+            <p>Hola!</p>
+            <p>Kamusta!</p>
+            <p>สวัสดี!</p>
+            <p>Sveiki!</p>
+            <p>Hola!</p>
+            <p>Hello!</p>
         </div>
     </div>
 
@@ -230,7 +250,7 @@
             <div class="left-panel">
                 <div class="section">
                     <h2>Profile</h2>
-                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being readily available to provide assistance and mentorship whenever needed.</p>
+                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
                 </div>
 
                 <div class="section">
@@ -325,7 +345,7 @@
                 loadingScreen.classList.add('hidden');
                 document.body.style.display = 'block'; // Mostrar el contenido de la página principal
                 mainContent.style.opacity = 1; // Animar la opacidad del contenido principal
-            }, 2000); // Tiempo de visualización de la pantalla de carga en milisegundos
+            }, 4000); // Tiempo de visualización de la pantalla de carga en milisegundos
         });
     </script>
 </body>
