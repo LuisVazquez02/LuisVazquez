@@ -185,32 +185,27 @@
             position: fixed; /* Cambiar a fijo para que esté siempre visible */
             bottom: 20px;
             right: 20px;
-            background-color: #004080; /* Color de fondo */
-            color: #fff; /* Color del ícono */
-            padding: 60px; /* Aumentar padding para hacer el botón mucho más grande */
-            border-radius: 50%; /* Botón completamente redondeado */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
+            background-color: #004080;
+            color: #fff;
+            width: 100px; /* Ajustar el tamaño del botón */
+            height: 100px; /* Ajustar el tamaño del botón */
+            border-radius: 50%; /* Hacer el botón circular */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
             cursor: pointer;
             text-align: center;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            font-size: 32px; /* Tamaño de la fuente más grande */
+            font-size: 16px; /* Ajustar el tamaño de la fuente para mejor visibilidad */
+            display: flex; /* Usar flexbox para centrar el icono */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
         }
-        
         .download-icon:hover {
-            background-color: #003366; /* Color de fondo al pasar el ratón */
-            transform: scale(1.1); /* Añadir un efecto de escala en el hover */
+            background-color: #003366;
+            transform: scale(1.05); /* Añadir un efecto de escala en el hover */
         }
-        
         .download-icon i {
-            font-size: 80px; /* Aumentar el tamaño del ícono */
+            font-size: 48px; /* Aumentar el tamaño del icono */
         }
-        
-        .download-icon p {
-            display: none; /* Ocultar el texto para que solo se muestre el ícono */
-        }
-
-
-
 
     </style>
 </head>
