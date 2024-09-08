@@ -191,25 +191,33 @@
             font-weight: 700;
             color: #003366;
         }
+        /* Estilos del botón de descarga */
         .download-icon {
-            position: absolute;
+            position: fixed; /* Cambiar a fijo para que esté siempre visible */
             bottom: 20px;
             right: 20px;
             background-color: #004080;
             color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            padding: 12px 20px; /* Ajustar padding para mejorar el tamaño */
+            border-radius: 30px; /* Hacer el botón más redondeado */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
             cursor: pointer;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 16px; /* Ajustar el tamaño de la fuente para mejor visibilidad */
         }
         .download-icon:hover {
             background-color: #003366;
+            transform: scale(1.05); /* Añadir un efecto de escala en el hover */
         }
         .download-icon i {
-            font-size: 20px;
+            font-size: 24px; /* Aumentar el tamaño del icono */
         }
+        .download-icon p {
+            margin: 0;
+            font-size: 14px; /* Ajustar el tamaño de la fuente del texto */
+        }
+
     </style>
 </head>
 <body>
@@ -350,11 +358,11 @@
             </div>
         </div>
 
-        <div class="download-icon">
+        <a href="Luis_Eduardo_Vazquez_Nunez.pdf" download class="download-icon">
             <i class="fas fa-download"></i>
             <p>Download CV</p>
-        </div>
-    </div>
+        </a>
+
 
     <script>
         window.addEventListener('load', () => {
