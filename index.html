@@ -191,25 +191,33 @@
             font-weight: 700;
             color: #003366;
         }
-        .download-icon {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: #004080;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-        .download-icon:hover {
-            background-color: #003366;
-        }
-        .download-icon i {
-            font-size: 20px;
-        }
+        /* Estilos para el icono de descarga */
+    .download-icon {
+        position: fixed; /* Cambia a fixed para que se mantenga en la pantalla */
+        bottom: 20px;
+        right: 20px;
+        background-color: #ff4c4c; /* Color de fondo rojo */
+        color: #fff;
+        padding: 15px;
+        border-radius: 10px; /* Esquinas redondeadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .download-icon:hover {
+        background-color: #e60000; /* Rojo más oscuro al pasar el cursor */
+        transform: scale(1.05); /* Efecto de aumento */
+    }
+    .download-icon i {
+        font-size: 24px; /* Tamaño del ícono */
+        margin-bottom: 5px; /* Espacio entre ícono y texto */
+    }
+    .download-icon div {
+        font-size: 14px; /* Tamaño del texto */
+        font-weight: bold; /* Texto en negrita */
+    }
+
     </style>
 </head>
 <body>
@@ -343,13 +351,14 @@
             </div>
         </div>
 
-    <!-- Icono de descarga -->
-    <div class="download-icon">
-        <a href="Luis_Eduardo_Vazquez_Nunez_CV.pdf" download>
-            <i class="fas fa-download"></i>
-            <div>Download CV</div>
-        </a>
-    </div>
+        <!-- Icono de descarga -->
+        <div class="download-icon">
+            <a href="Luis_Eduardo_Vazquez_Nunez_CV.pdf" download="Luis_Eduardo_Vazquez_Nunez_CV.pdf">
+                <i class="fas fa-file-pdf"></i>
+                <div>Download CV</div>
+            </a>
+        </div>
+
 
 
     <!-- Scripts -->
