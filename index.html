@@ -186,14 +186,14 @@
             bottom: 20px;
             right: 20px;
             background-color: #004080; /* Color de fondo */
-            color: #fff; /* Color del texto y del ícono */
-            padding: 12px; /* Ajustar padding para mejorar el tamaño */
+            color: #fff; /* Color del ícono */
+            padding: 60px; /* Aumentar padding para hacer el botón mucho más grande */
             border-radius: 50%; /* Botón completamente redondeado */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
             cursor: pointer;
             text-align: center;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            font-size: 24px; /* Aumentar el tamaño de la fuente para mejor visibilidad */
+            font-size: 32px; /* Tamaño de la fuente más grande */
         }
         
         .download-icon:hover {
@@ -202,12 +202,13 @@
         }
         
         .download-icon i {
-            font-size: 300px; /* Aumentar el tamaño del ícono */
+            font-size: 80px; /* Aumentar el tamaño del ícono */
         }
         
         .download-icon p {
             display: none; /* Ocultar el texto para que solo se muestre el ícono */
         }
+
 
 
 
@@ -353,10 +354,8 @@
             </div>
         </div>
 
-        <!-- Botón de descarga -->
-        <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download="Luis_Eduardo_Vazquez_Nuñez.pdf" class="download-icon">
-            <i class="fas fa-download"></i>
-            <p>Download CV</p>
+        <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download class="download-icon">
+            <i class="fas fa-file-pdf"></i> <!-- Ícono de PDF -->
         </a>
 
 
