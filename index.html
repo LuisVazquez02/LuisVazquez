@@ -6,6 +6,7 @@
     <title>CV - Luis Eduardo Vázquez Núñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+
         /* Estilos de la pantalla de carga */
         .loading-screen {
             position: fixed;
@@ -57,6 +58,7 @@
             50% { opacity: 0; }
             100% { opacity: 0; }
         }
+
 
         /* Estilos para la página principal */
         body {
@@ -185,37 +187,40 @@
             font-weight: 700;
             color: #003366;
         }
-        /* Estilos para el icono de descarga */
-        .download-icon {
-            position: fixed; /* Mantener en la pantalla */
-            bottom: 20px;
-            right: 20px;
-            background-color: #004080; /* Azul que armoniza con el fondo */
-            color: #000000;
-            padding: 15px;
-            border-radius: 12px; /* Esquinas más suaves */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .download-icon:hover {
-            background-color: #003366; /* Azul más oscuro al pasar el cursor */
-            transform: scale(1.05); /* Efecto de aumento */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el cursor */
-        }
-        
-        .download-icon i {
-            font-size: 24px; /* Tamaño del ícono */
-            margin-bottom: 5px; /* Espacio entre ícono y texto */
-        }
-        
-        .download-icon div {
-            font-size: 14px; /* Tamaño del texto */
-            font-weight: bold; /* Texto en negrita */
-            margin-top: 5px; /* Espacio entre texto e ícono */
-        }
+    /* Estilos para el icono de descarga */
+    .download-icon {
+        position: fixed; /* Mantener en la pantalla */
+        bottom: 20px;
+        right: 20px;
+        background-color: #004080; /* Azul que armoniza con el fondo */
+        color: #000000;
+        padding: 15px;
+        border-radius: 12px; /* Esquinas más suaves */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .download-icon:hover {
+        background-color: #003366; /* Azul más oscuro al pasar el cursor */
+        transform: scale(1.05); /* Efecto de aumento */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el cursor */
+    }
+    
+    .download-icon i {
+        font-size: 24px; /* Tamaño del ícono */
+        margin-bottom: 5px; /* Espacio entre ícono y texto */
+    }
+    
+    .download-icon div {
+        font-size: 14px; /* Tamaño del texto */
+        font-weight: bold; /* Texto en negrita */
+        margin-top: 5px; /* Espacio entre texto e ícono */
+    }
+
+
+
     </style>
 </head>
 <body>
@@ -240,8 +245,6 @@
     </div>
 
     <!-- Contenido principal -->
-    <div class="container" id="main-content">
-            <!-- Contenido principal -->
     <div class="container" id="main-content">
         <div class="title-box">
             <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
@@ -361,42 +364,27 @@
             </a>
         </div>
 
-    </div>
-
-    <!-- Icono de descarga -->
-    <div class="download-icon">
-        <a href="Luis_Eduardo_Vazquez_Nunez_CV.pdf" target="_blank">
-            <i class="fas fa-file-pdf"></i>
-            <div>Ver CV</div>
-        </a>
-    </div>
+    <!-- Scripts -->
+    window.addEventListener('load', () => {
+        const totalDuration = 5000; // Tiempo total de la pantalla de carga en milisegundos
+        const numberOfGreetings = 18; // Número total de saludos
+        const timePerGreeting = totalDuration / numberOfGreetings; // Tiempo por saludo
     
-    <!-- Icono de CV (sin funcionalidad de enlace) -->
-    <div class="download-icon">
-        <i class="fa fa-file-pdf"></i>
-        <div>Ver CV</div>
-    </div>
+        // Establece el tiempo de animación y el retraso para cada saludo
+        document.querySelectorAll('.loading-screen .greeting p').forEach((element, index) => {
+            element.style.animationDuration = `${timePerGreeting}ms`;
+            element.style.animationDelay = `${index * timePerGreeting}ms`;
+        });
+    
+        // Transición a la página principal después del tiempo total
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+            document.getElementById('main-content').style.opacity = '1';
+            document.getElementById('main-content').style.visibility = 'visible';
+        }, totalDuration); // Tiempo total de la pantalla de carga
+    });
 
-
-    <script>
-        window.onload = function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-
-            // Agregar retraso para que cada saludo aparezca secuencialmente
-            const greetings = document.querySelectorAll('.greeting p');
-            greetings.forEach((greeting, index) => {
-                greeting.style.animationDelay = `${index * 1}s`;
-            });
-
-            // Ocultar pantalla de carga y mostrar contenido principal después de un retraso
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                mainContent.style.opacity = 1;
-                mainContent.style.visibility = 'visible';
-            }, 2000);
-        };
+        
     </script>
 </body>
 </html>
-
