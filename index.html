@@ -6,6 +6,7 @@
     <title>CV - Luis Eduardo Vázquez Núñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+
         /* Estilos de la pantalla de carga */
         .loading-screen {
             position: fixed;
@@ -24,18 +25,21 @@
             z-index: 9999;
             opacity: 1;
             visibility: visible;
-            transition: opacity 1s ease, visibility 1s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
+        
         .loading-screen.hidden {
             opacity: 0;
             visibility: hidden;
         }
+        
         .loading-screen .greeting {
             position: relative;
             width: 300px; /* Ajusta el ancho según sea necesario */
             height: 60px; /* Ajusta la altura según sea necesario */
             overflow: hidden;
         }
+        
         .loading-screen .greeting p {
             position: absolute;
             width: 100%;
@@ -43,26 +47,18 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            animation: changeText 9s steps(15) infinite;
+            opacity: 0; /* Inicialmente oculto */
+            animation: fadeInOut 0.5s forwards; /* Tiempo de animación de cada saludo */
         }
-        @keyframes changeText {
-            0% { transform: translateY(0); }
-            6.66% { transform: translateY(-100%); }
-            13.33% { transform: translateY(-200%); }
-            20% { transform: translateY(-300%); }
-            26.66% { transform: translateY(-400%); }
-            33.33% { transform: translateY(-500%); }
-            40% { transform: translateY(-600%); }
-            46.66% { transform: translateY(-700%); }
-            53.33% { transform: translateY(-800%); }
-            60% { transform: translateY(-900%); }
-            66.66% { transform: translateY(-1000%); }
-            73.33% { transform: translateY(-1100%); }
-            80% { transform: translateY(-1200%); }
-            86.66% { transform: translateY(-1300%); }
-            93.33% { transform: translateY(-1400%); }
-            100% { transform: translateY(-1500%); }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            40% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 0; }
         }
+
 
         /* Estilos para la página principal */
         body {
@@ -371,18 +367,24 @@
 
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-        // Script para ocultar la pantalla de carga
-        window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-            setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                mainContent.style.opacity = 1;
-                mainContent.style.visibility = 'visible';
-            }, 1000); // Tiempo de carga antes de ocultar la pantalla
+    window.addEventListener('load', () => {
+        const totalDuration = 5000; // Tiempo total de la pantalla de carga en milisegundos
+        const numberOfGreetings = 18; // Número total de saludos
+        const timePerGreeting = totalDuration / numberOfGreetings; // Tiempo por saludo
+    
+        // Establece el tiempo de animación y el retraso para cada saludo
+        document.querySelectorAll('.loading-screen .greeting p').forEach((element, index) => {
+            element.style.animationDuration = `${timePerGreeting}ms`;
+            element.style.animationDelay = `${index * timePerGreeting}ms`;
         });
+    
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+            document.getElementById('main-content').style.opacity = '1';
+            document.getElementById('main-content').style.visibility = 'visible';
+        }, totalDuration); // Tiempo total de la pantalla de carga
+    });
+
     </script>
 </body>
 </html>
