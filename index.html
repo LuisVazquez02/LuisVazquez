@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Luis Eduardo Vazquez Nuñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Estilos de la pantalla de carga */
         .loading-screen {
@@ -32,14 +31,32 @@
             visibility: hidden;
         }
         .loading-screen .greeting {
-            animation: fadeInOut 4s ease-in-out infinite;
+            position: relative;
+            width: 200px; /* Ajusta el ancho según sea necesario */
+            height: 60px; /* Ajusta la altura según sea necesario */
+            overflow: hidden;
         }
-        .greeting p {
+        .loading-screen .greeting p {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             margin: 0;
+            line-height: 60px; /* Ajusta para centrar verticalmente */
+            text-align: center;
+            animation: changeText 3.5s steps(10) infinite;
         }
-        @keyframes fadeInOut {
-            0%, 100% { opacity: 0; }
-            10%, 90% { opacity: 1; }
+        @keyframes changeText {
+            0% { transform: translateY(0); }
+            10% { transform: translateY(-100%); }
+            20% { transform: translateY(-200%); }
+            30% { transform: translateY(-300%); }
+            40% { transform: translateY(-400%); }
+            50% { transform: translateY(-500%); }
+            60% { transform: translateY(-600%); }
+            70% { transform: translateY(-700%); }
+            80% { transform: translateY(-800%); }
+            90% { transform: translateY(-900%); }
+            100% { transform: translateY(-1000%); }
         }
 
         body {
@@ -206,7 +223,7 @@
     </div>
 
     <!-- Contenido principal -->
-    <div class="container" id="main-content">
+    <div class="container">
         <div class="title-box">
             <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
             <div class="contact-info">
@@ -236,34 +253,84 @@
             <div class="left-panel">
                 <div class="section">
                     <h2>Profile</h2>
-                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I am committed to delivering results that exceed expectations.</p>
+                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
                 </div>
-                <div class="section">
-                    <h2>Experience</h2>
-                    <p>Detail your professional experience here, highlighting key achievements and responsibilities in each role.</p>
-                </div>
+
                 <div class="section">
                     <h2>Education</h2>
-                    <p>Provide details about your academic background, including degrees, certifications, and relevant coursework.</p>
+                    <p><strong>Chemical Laboratory Technology</strong>, IPN (2017 - 2019)</p>
+                    <p>Specializing in Chemical Laboratory Technology, gaining skills in chemical analysis, lab techniques, and safety protocols.</p>
+
+                    <p><strong>Aeronautical Engineering</strong>, UACJ (2020 - 2024)</p>
+                    <p>As an Aerospace Engineering student, I focus on designing and maintaining aircraft and spacecraft, driven by my passion for advancing aerospace technology.</p>
+                    <ul>
+                        <li>Thesis: Coatings and electrochemical corrosion</li>
+                    </ul>
                 </div>
+
                 <div class="section">
-                    <h2>Skills</h2>
+                    <h2>Work Experience</h2>
+                    <p><strong>Planning Trainee</strong>, BRP (Dec 2024 - Aug 2024)</p>
+                    <p>Coordination, Supply chain Inventory management, Communication, Analysis, Planning.</p>
+                    <ul>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Meetings with Canadian and American suppliers</li>
+                        <li>Pre-shipment confirmation</li>
+                        <li>Tools: Microsoft Office (Excel - Macros), SAP</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Certificates</h2>
+                    <p><strong>Corrosion engineering and protection methods</strong> (Jan 2024)</p>
+                    <p><strong>Six Sigma</strong> (In progress)</p>
+                </div>
+
+                <div class="section">
+                    <h2>Interests</h2>
+                    <p>I have a strong passion for engineering and technology, with a deep interest in the repair and maintenance of complex systems, from automobiles to electronic devices. My fascination extends to aeronautical engineering and the technical intricacies behind airplanes. Additionally, I am enthusiastic about the wide applications of technology, including advancements in the medical, automotive, and electronic industries, as well as my expertise in computers and programming.</p>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="section">
+                    <h2>Programming and Software</h2>
                     <div class="skills">
-                        <p><strong>Software</strong></p>
+                        <p>LaTeX</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Python</p>
                         <div class="skill-level"><div style="width: 80%;"></div></div>
-                        <p><strong>Programming Languages</strong></p>
+                        <p>MATLAB</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Visual Basic</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Autocad</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Ansys</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Solidworks</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>Minitab</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>SAP</p>
                         <div class="skill-level"><div style="width: 70%;"></div></div>
                     </div>
                 </div>
+
                 <div class="section">
                     <h2>Languages</h2>
                     <div class="languages">
                         <p>English</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
                         <p>Spanish</p>
-                        <p>French</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
                     </div>
                 </div>
             </div>
+        </div>
 
             <div class="right-panel">
                 <div class="section">
@@ -287,15 +354,15 @@
             const loadingScreen = document.getElementById('loading-screen');
             const mainContent = document.getElementById('main-content');
             
-            // Mantener la pantalla de carga visible durante 4 segundos
+            // Mantener la pantalla de carga visible durante 3.5 segundos
             setTimeout(() => {
                 // Ocultar la pantalla de carga
                 loadingScreen.classList.add('hidden');
 
-                // Mostrar el contenido principal
+                // Mostrar el contenido principal con transición
                 mainContent.style.visibility = 'visible';
                 mainContent.style.opacity = '1';
-            }, 4000); // Tiempo en milisegundos
+            }, 3500); // Tiempo en milisegundos
         });
     </script>
 </body>
