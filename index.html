@@ -182,29 +182,33 @@
         
         /* Estilos del botón de descarga */
         .download-icon {
-            position: fixed; /* Fijo para que esté siempre visible */
+            position: fixed; /* Cambiar a fijo para que esté siempre visible */
             bottom: 20px;
             right: 20px;
-            background-color: #004080;
-            color: #fff;
-            padding: 12px;
-            border-radius: 50%; /* Botón redondeado */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+            background-color: #004080; /* Color de fondo */
+            color: #fff; /* Color del texto y del ícono */
+            padding: 12px; /* Ajustar padding para mejorar el tamaño */
+            border-radius: 50%; /* Botón completamente redondeado */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
             cursor: pointer;
             text-align: center;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            font-size: 24px; /* Tamaño del ícono */
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Centra el ícono dentro del botón */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 24px; /* Aumentar el tamaño de la fuente para mejor visibilidad */
         }
+        
         .download-icon:hover {
-            background-color: #003366;
-            transform: scale(1.05); /* Efecto de escala en hover */
+            background-color: #003366; /* Color de fondo al pasar el ratón */
+            transform: scale(1.1); /* Añadir un efecto de escala en el hover */
         }
+        
         .download-icon i {
-            font-size: 24px; /* Tamaño del ícono */
+            font-size: 32px; /* Aumentar el tamaño del ícono */
         }
+        
+        .download-icon p {
+            display: none; /* Ocultar el texto para que solo se muestre el ícono */
+        }
+
 
 
     </style>
@@ -350,9 +354,11 @@
         </div>
 
         <!-- Botón de descarga -->
-        <a href="ruta/al/archivo/Luis_Eduardo_Vazquez_Nunez.pdf" download class="download-icon" title="Download CV">
-            <i class="fas fa-file-pdf"></i>
+        <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download="Luis_Eduardo_Vazquez_Nuñez.pdf" class="download-icon">
+            <i class="fas fa-download"></i>
+            <p>Download CV</p>
         </a>
+
 
 
 
