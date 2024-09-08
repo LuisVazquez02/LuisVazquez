@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Luis Eduardo Vazquez Nuñez</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
 
+        }
 
 
         /* Estilos para la página principal */
@@ -137,7 +130,64 @@
             color: #003366;
         }
         
+        /* Estilos del botón de descarga */
+        .download-icon {
+            position: fixed; /* Cambiar a fijo para que esté siempre visible */
+            bottom: 20px;
+            right: 20px;
+            background-color: #004080;
+            color: #fff;
+            width: 100px; /* Ajustar el tamaño del botón */
+            height: 100px; /* Ajustar el tamaño del botón */
+            border-radius: 50%; /* Hacer el botón circular */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex; /* Usar flexbox para centrar el icono */
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+        }
+        
+        .download-icon:hover {
+            background-color: #003366;
+            transform: scale(1.05); /* Añadir un efecto de escala en el hover */
+        }
+        
+        .download-icon i {
+            font-size: 48px; /* Aumentar el tamaño del icono */
+        }
 
+
+    </style>
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="greeting">
+            <p>Hello!</p>
+            <p>¡Hola!</p>
+            <p>Bonjour!</p>
+            <p>Guten Tag!</p>
+            <p>Ciao!</p>
+            <p>こんにちは!</p>
+            <p>안녕하세요!</p>
+            <p>Merhaba!</p>
+            <p>你好!</p>
+            <p>Salut!</p>
+            <p>Olá!</p>
+            <p>Hej!</p>
+            <p>Hallo!</p>
+            <p>שלום!</p>
+            <p>Szia!</p>
+            <p>नमस्ते!</p>
+            <p>สวัสดี!</p>
+            <p>مرحبا!</p>
+            <p>Salam!</p>
+            <p>Բարև!</p>
+            <p>こんにちは!</p>
+        </div>
+    </div>
 
     <!-- Contenido principal -->
     <div class="container" id="main-content">
@@ -251,3 +301,44 @@
             </div>
         </div>
 
+        <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download class="download-icon">
+            <i class="fas fa-file-pdf"></i> <!-- Ícono de PDF -->
+        </a>
+
+
+
+
+    <script>
+         window.addEventListener('load', () => {
+            const totalDuration = 4; // Duración total en segundos
+            const durationPerGreeting = 0.2; // Duración de cada saludo en segundos
+            const numGreetings = document.querySelectorAll('.loading-screen .greeting p').length;
+            
+            const cycleDuration = numGreetings * durationPerGreeting; // Duración de un ciclo completo
+            const numCycles = Math.ceil(totalDuration / cycleDuration); // Número de ciclos necesarios
+        
+            let currentGreetingIndex = 0;
+        
+            const showNextGreeting = () => {
+                const greetings = document.querySelectorAll('.loading-screen .greeting p');
+                greetings.forEach((greeting, index) => {
+                    greeting.style.opacity = index === currentGreetingIndex ? '1' : '0';
+                });
+                currentGreetingIndex = (currentGreetingIndex + 1) % numGreetings;
+            };
+        
+            const intervalId = setInterval(() => {
+                showNextGreeting();
+            }, durationPerGreeting * 1000); // Convertir a milisegundos
+        
+            setTimeout(() => {
+                clearInterval(intervalId); // Detener el intervalo
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('main-content').style.opacity = '1';
+                document.getElementById('main-content').style.visibility = 'visible';
+            }, totalDuration * 1000); // Tiempo total en milisegundos
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
