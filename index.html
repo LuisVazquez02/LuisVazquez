@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Luis Eduardo Vazquez Nuñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Playfair Display', serif; /* Fuente elegante y llamativa */
@@ -25,14 +26,17 @@
             color: #fff; /* Color blanco para el texto */
             padding: 20px;
             align-items: center;
+            justify-content: center; /* Centrado de los elementos en el contenedor */
+            flex-direction: column; /* Coloca los elementos en una columna */
         }
         .title-box img {
             width: 150px;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-bottom: 20px; /* Margen inferior para separación de la foto */
         }
         .contact-info {
             font-size: 18px;
+            text-align: center; /* Centra el texto */
         }
         .contact-info a {
             color: #0066cc; /* Color azul medio */
@@ -40,6 +44,22 @@
         }
         .contact-info a:hover {
             text-decoration: underline;
+        }
+        .contact-details {
+            display: flex;
+            justify-content: center; /* Centra los íconos y textos */
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una línea */
+        }
+        .contact-details div {
+            margin: 0 15px; /* Espaciado horizontal entre los íconos */
+            text-align: center; /* Centra el texto debajo de los íconos */
+        }
+        .contact-details i {
+            font-size: 24px; /* Tamaño de los íconos */
+            color: #003366; /* Color azul oscuro */
+        }
+        .contact-details p {
+            margin: 5px 0 0 0; /* Margen superior para el texto debajo de los íconos */
         }
         .main-content {
             display: flex;
@@ -94,10 +114,24 @@
             <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
             <div class="contact-info">
                 <h1>Luis Eduardo Vazquez Nuñez</h1>
-                <p>Email: <a href="mailto:luisvzne@gmail.com">luisvzne@gmail.com</a></p>
-                <p>Phone: +52 656-533-5118</p>
-                <p>Location: Juárez, México</p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn Profile</a></p>
+                <div class="contact-details">
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <p>Email: <a href="mailto:luisvzne@gmail.com">luisvzne@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <p>Phone: +52 656-533-5118</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Location: Juárez, México</p>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn Profile</a></p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -182,4 +216,5 @@
     </div>
 </body>
 </html>
+
 
