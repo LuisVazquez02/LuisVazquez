@@ -43,31 +43,35 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            animation: changeText 6s steps(20) infinite;
+            opacity: 0;
+            animation: fadeInOut 3s linear;
         }
-        @keyframes changeText {
-            0% { transform: translateY(0); }
-            5% { transform: translateY(-100%); }
-            10% { transform: translateY(-200%); }
-            15% { transform: translateY(-300%); }
-            20% { transform: translateY(-400%); }
-            25% { transform: translateY(-500%); }
-            30% { transform: translateY(-600%); }
-            35% { transform: translateY(-700%); }
-            40% { transform: translateY(-800%); }
-            45% { transform: translateY(-900%); }
-            50% { transform: translateY(-1000%); }
-            55% { transform: translateY(-1100%); }
-            60% { transform: translateY(-1200%); }
-            65% { transform: translateY(-1300%); }
-            70% { transform: translateY(-1400%); }
-            75% { transform: translateY(-1500%); }
-            80% { transform: translateY(-1600%); }
-            85% { transform: translateY(-1700%); }
-            90% { transform: translateY(-1800%); }
-            95% { transform: translateY(-1900%); }
-            100% { transform: translateY(-2000%); }
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            30% { opacity: 1; }
+            40% { opacity: 0; }
+            100% { opacity: 0; }
         }
+        .loading-screen .greeting p:nth-child(1) { animation-delay: 0s; }
+        .loading-screen .greeting p:nth-child(2) { animation-delay: 0.15s; }
+        .loading-screen .greeting p:nth-child(3) { animation-delay: 0.30s; }
+        .loading-screen .greeting p:nth-child(4) { animation-delay: 0.45s; }
+        .loading-screen .greeting p:nth-child(5) { animation-delay: 0.60s; }
+        .loading-screen .greeting p:nth-child(6) { animation-delay: 0.75s; }
+        .loading-screen .greeting p:nth-child(7) { animation-delay: 0.90s; }
+        .loading-screen .greeting p:nth-child(8) { animation-delay: 1.05s; }
+        .loading-screen .greeting p:nth-child(9) { animation-delay: 1.20s; }
+        .loading-screen .greeting p:nth-child(10) { animation-delay: 1.35s; }
+        .loading-screen .greeting p:nth-child(11) { animation-delay: 1.50s; }
+        .loading-screen .greeting p:nth-child(12) { animation-delay: 1.65s; }
+        .loading-screen .greeting p:nth-child(13) { animation-delay: 1.80s; }
+        .loading-screen .greeting p:nth-child(14) { animation-delay: 1.95s; }
+        .loading-screen .greeting p:nth-child(15) { animation-delay: 2.10s; }
+        .loading-screen .greeting p:nth-child(16) { animation-delay: 2.25s; }
+        .loading-screen .greeting p:nth-child(17) { animation-delay: 2.40s; }
+        .loading-screen .greeting p:nth-child(18) { animation-delay: 2.55s; }
+        .loading-screen .greeting p:nth-child(19) { animation-delay: 2.70s; }
 
         /* Estilos para la página principal */
         body {
@@ -88,10 +92,6 @@
             visibility: hidden; /* Ocultar inicialmente */
             transition: opacity 1s ease, visibility 1s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         .title-box {
             display: flex;
             background-color: #004080;
@@ -100,18 +100,11 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            animation: fadeIn 1s ease forwards;
         }
         .title-box img {
             width: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
-            animation: bounceIn 1s ease;
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0); opacity: 0; }
-            60% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); }
         }
         .contact-info {
             font-size: 18px;
@@ -162,11 +155,6 @@
         }
         .section {
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .section h2 {
             color: #003366;
@@ -190,63 +178,41 @@
         }
         .skill-level div {
             height: 100%;
-            background-color: #003366;
-        }
-        .highlight {
-            font-weight: 700;
-            color: #003366;
-        }
-        .download-icon {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
             background-color: #004080;
-            color: #fff;
-            padding: 10px;
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease;
         }
-        .download-icon:hover {
-            background-color: #003366;
-        }
-        .download-icon i {
-            font-size: 20px;
+        .language-level {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
 <body>
-    <!-- Pantalla de carga -->
-    <div class="loading-screen" id="loading-screen">
+    <div class="loading-screen" id="loadingScreen">
         <div class="greeting">
-            <p>Hello!</p>
-            <p>¡Hola!</p>
-            <p>Bonjour!</p>
-            <p>Guten Tag!</p>
-            <p>Ciao!</p>
-            <p>こんにちは!</p>
-            <p>안녕하세요!</p>
-            <p>Merhaba!</p>
-            <p>你好!</p>
-            <p>Salut!</p>
-            <p>Olá!</p>
-            <p>Hej!</p>
-            <p>Hallo!</p>
-            <p>Hola!</p>
-            <p>שלום!</p>
-            <p>Szia!</p>
-            <p>नमस्ते!</p>
-            <p>สวัสดี!</p>
-            <p>مرحبا!</p>
-            <p>Salam!</p>
-            <p>Բարև!</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
+            <p>Hello</p>
+            <p>Bonjour</p>
+            <p>Hola</p>
         </div>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="container" id="main-content">
+    <!-- Página principal (deja esto vacío para completar después) -->
+    <div class="container" id="mainContent">
            <!-- Contenido principal -->
     <div class="container" id="main-content">
         <div class="title-box">
@@ -360,25 +326,23 @@
         </div>
 
         <!-- Icono de descarga -->
-        <div class="download-icon">
-            <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download="Luis_Eduardo_Vazquez_Nuñez.pdf">
-                <i class="fas fa-file-pdf"></i>
-                <div>Download CV</div>
+        <div class="download-section">
+            <a href="Luis_Eduardo_Vazquez_Nunez.pdf" download="Luis_Eduardo_Vazquez_Nunez.pdf" class="download-link">
+                <i class="fas fa-file-pdf download-icon"></i>
+                <div class="download-text">Download CV</div>
             </a>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-
+        document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                mainContent.style.opacity = 1;
-                mainContent.style.visibility = 'visible';
-            }, 6000); // 6 segundos para mostrar todos los saludos
+                document.getElementById('loadingScreen').classList.add('hidden');
+                document.getElementById('mainContent').style.opacity = 1;
+                document.getElementById('mainContent').style.visibility = 'visible';
+            }, 3000); // Duración de la pantalla de carga en milisegundos
         });
     </script>
 </body>
 </html>
+
