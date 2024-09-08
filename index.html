@@ -57,8 +57,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
             opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            display: none; /* Ocultar inicialmente */
+            visibility: hidden; /* Ocultar inicialmente */
+            transition: opacity 1s ease, visibility 1s ease;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -207,10 +207,82 @@
 
     <!-- Contenido principal -->
     <div class="container" id="main-content">
-        <!-- Aquí va todo el contenido de tu página principal -->
+        <div class="title-box">
+            <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
+            <div class="contact-info">
+                <h1>Luis Eduardo Vazquez Nuñez</h1>
+                <div class="contact-details">
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                        <p>Email: <a href="mailto:luisvzne@gmail.com">luisvzne@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <i class="fas fa-phone"></i>
+                        <p>Phone: +52 656-533-5118</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Location: Juárez, México</p>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn Profile</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="section">
+                    <h2>Profile</h2>
+                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I am committed to delivering results that exceed expectations.</p>
+                </div>
+                <div class="section">
+                    <h2>Experience</h2>
+                    <p>Detail your professional experience here, highlighting key achievements and responsibilities in each role.</p>
+                </div>
+                <div class="section">
+                    <h2>Education</h2>
+                    <p>Provide details about your academic background, including degrees, certifications, and relevant coursework.</p>
+                </div>
+                <div class="section">
+                    <h2>Skills</h2>
+                    <div class="skills">
+                        <p><strong>Software</strong></p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p><strong>Programming Languages</strong></p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Languages</h2>
+                    <div class="languages">
+                        <p>English</p>
+                        <p>Spanish</p>
+                        <p>French</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="section">
+                    <h2>Additional Information</h2>
+                    <p>Include any other relevant details or sections that add value to your profile.</p>
+                </div>
+                <div class="download-icon" onclick="downloadCV()">
+                    <i class="fas fa-download"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
+        function downloadCV() {
+            // Implement the function to download your CV
+            alert('Downloading CV...');
+        }
+
         window.addEventListener('load', () => {
             const loadingScreen = document.getElementById('loading-screen');
             const mainContent = document.getElementById('main-content');
@@ -221,8 +293,8 @@
                 loadingScreen.classList.add('hidden');
 
                 // Mostrar el contenido principal
-                mainContent.style.display = 'block';
-                mainContent.style.opacity = 1;
+                mainContent.style.visibility = 'visible';
+                mainContent.style.opacity = '1';
             }, 4000); // Tiempo en milisegundos
         });
     </script>
