@@ -74,7 +74,11 @@
             transition: opacity 1s ease, visibility 1s ease;
         }
         
-        /* Estilos del título */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
         .title-box {
             display: flex;
             background-color: #004080;
@@ -93,7 +97,53 @@
             animation: bounceIn 1s ease;
         }
         
-        /* Estilos del contenido */
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        
+        .contact-info {
+            font-size: 18px;
+        }
+        
+        .contact-info a {
+            color: #ffcc00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #ffd700;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .contact-details div {
+            margin: 0 15px;
+            text-align: center;
+        }
+        
+        .contact-details i {
+            font-size: 24px;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details i:hover {
+            color: #003366;
+        }
+        
+        .contact-details p {
+            margin: 5px 0 0 0;
+            color: #fff;
+        }
+        
         .main-content {
             display: flex;
             margin-top: 20px;
@@ -115,6 +165,11 @@
         .section {
             margin-bottom: 20px;
             animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .section h2 {
@@ -179,68 +234,31 @@
             font-size: 48px; /* Aumentar el tamaño del icono */
         }
         
-        /* Consultas de medios para pantallas pequeñas (celulares) */
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column; /* Cambiar la dirección a columna en pantallas pequeñas */
-            }
-            
-            .left-panel, .right-panel {
-                flex: 1; /* Los paneles se tomarán el mismo espacio */
-            }
-            
-            .title-box img {
-                width: 60%; /* Ajustar el tamaño de la imagen en pantallas pequeñas */
-            }
-        }
-        
         @media (max-width: 480px) {
-            .contact-info {
-                font-size: 0.9rem; /* Reducir el tamaño de fuente en pantallas más pequeñas */
-            }
-            
             .contact-details {
-                flex-direction: column; /* Hacer que los detalles de contacto se apilen verticalmente */
-                align-items: center; /* Centrar los detalles de contacto */
+                flex-direction: row; /* Mantener los elementos en una fila */
+                flex-wrap: wrap; /* Permitir que los elementos se envuelvan si es necesario */
+                justify-content: space-between; /* Espacio entre los elementos */
             }
-            
+        
             .contact-details div {
-                margin-bottom: 10px; /* Espacio entre los elementos de contacto */
+                margin-bottom: 10px; /* Espacio inferior entre elementos de contacto */
+                text-align: center; /* Centrar el texto */
+                flex: 1 1 auto; /* Permitir que los elementos crezcan y se reduzcan */
             }
-            
+        
             .contact-details i {
-                font-size: 20px; /* Reducir el tamaño del ícono */
+                font-size: 20px; /* Ajustar el tamaño del ícono en pantallas más pequeñas */
+            }
+        
+            .contact-info {
+                font-size: 1rem; /* Mantener el tamaño de fuente adecuado en pantallas pequeñas */
             }
         }
 
+
         
-        /* Estilos del botón de descarga */
-        .download-icon {
-            position: fixed; /* Cambiar a fijo para que esté siempre visible */
-            bottom: 20px;
-            right: 20px;
-            background-color: #004080;
-            color: #fff;
-            width: 100px; /* Ajustar el tamaño del botón */
-            height: 100px; /* Ajustar el tamaño del botón */
-            border-radius: 50%; /* Hacer el botón circular */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex; /* Usar flexbox para centrar el icono */
-            justify-content: center; /* Centrar horizontalmente */
-            align-items: center; /* Centrar verticalmente */
-        }
-        
-        .download-icon:hover {
-            background-color: #003366;
-            transform: scale(1.05); /* Añadir un efecto de escala en el hover */
-        }
-        
-        .download-icon i {
-            font-size: 48px; /* Aumentar el tamaño del icono */
-        }
+
 
 
     </style>
