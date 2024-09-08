@@ -48,7 +48,7 @@
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
             opacity: 0; /* Inicialmente oculto */
-            animation: fadeInOut 0.5s forwards; /* Tiempo de animación de cada saludo */
+            animation: fadeInOut 1s forwards; /* Tiempo de animación de cada saludo */
         }
         
         @keyframes fadeInOut {
@@ -364,8 +364,6 @@
             </a>
         </div>
 
-
-
     <!-- Scripts -->
     window.addEventListener('load', () => {
         const totalDuration = 5000; // Tiempo total de la pantalla de carga en milisegundos
@@ -378,6 +376,7 @@
             element.style.animationDelay = `${index * timePerGreeting}ms`;
         });
     
+        // Transición a la página principal después del tiempo total
         setTimeout(() => {
             document.getElementById('loading-screen').classList.add('hidden');
             document.getElementById('main-content').style.opacity = '1';
@@ -385,6 +384,7 @@
         }, totalDuration); // Tiempo total de la pantalla de carga
     });
 
+        
     </script>
 </body>
 </html>
