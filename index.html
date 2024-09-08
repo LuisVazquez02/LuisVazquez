@@ -6,6 +6,7 @@
     <title>CV - Luis Eduardo Vazquez Nuñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+
         /* Estilos de la pantalla de carga */
         .loading-screen {
             position: fixed;
@@ -44,7 +45,7 @@
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
             opacity: 0; /* Inicialmente invisible */
-            animation: showText 3s steps(1) infinite;
+            animation: showText 3s steps(30) infinite; /* Duración total de 3 segundos */
         }
         .loading-screen .greeting p:nth-child(1) { animation-delay: 0s; }
         .loading-screen .greeting p:nth-child(2) { animation-delay: 0.1s; }
@@ -78,10 +79,13 @@
         .loading-screen .greeting p:nth-child(30) { animation-delay: 2.9s; }
         
         @keyframes showText {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            30% { opacity: 1; }
+            40% { opacity: 0; }
+            100% { opacity: 0; }
         }
+
 
 
         /* Estilos para la página principal */
