@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Luis Eduardo Vazquez Nuñez</title>
+    <title>CV - Luis Eduardo Vázquez Núñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos de la pantalla de carga */
@@ -43,35 +43,26 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            opacity: 0;
-            animation: fadeInOut 0.5s ease forwards;
+            animation: changeText 9s steps(15) infinite;
         }
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            25% { opacity: 1; }
-            75% { opacity: 1; }
-            100% { opacity: 0; }
+        @keyframes changeText {
+            0% { transform: translateY(0); }
+            6.66% { transform: translateY(-100%); }
+            13.33% { transform: translateY(-200%); }
+            20% { transform: translateY(-300%); }
+            26.66% { transform: translateY(-400%); }
+            33.33% { transform: translateY(-500%); }
+            40% { transform: translateY(-600%); }
+            46.66% { transform: translateY(-700%); }
+            53.33% { transform: translateY(-800%); }
+            60% { transform: translateY(-900%); }
+            66.66% { transform: translateY(-1000%); }
+            73.33% { transform: translateY(-1100%); }
+            80% { transform: translateY(-1200%); }
+            86.66% { transform: translateY(-1300%); }
+            93.33% { transform: translateY(-1400%); }
+            100% { transform: translateY(-1500%); }
         }
-
-        /* Estilos para la animación de los saludos */
-        .loading-screen .greeting p:nth-child(1) { animation-delay: 0s; }
-        .loading-screen .greeting p:nth-child(2) { animation-delay: 0.5s; }
-        .loading-screen .greeting p:nth-child(3) { animation-delay: 1s; }
-        .loading-screen .greeting p:nth-child(4) { animation-delay: 1.5s; }
-        .loading-screen .greeting p:nth-child(5) { animation-delay: 2s; }
-        .loading-screen .greeting p:nth-child(6) { animation-delay: 2.5s; }
-        .loading-screen .greeting p:nth-child(7) { animation-delay: 3s; }
-        .loading-screen .greeting p:nth-child(8) { animation-delay: 3.5s; }
-        .loading-screen .greeting p:nth-child(9) { animation-delay: 4s; }
-        .loading-screen .greeting p:nth-child(10) { animation-delay: 4.5s; }
-        .loading-screen .greeting p:nth-child(11) { animation-delay: 5s; }
-        .loading-screen .greeting p:nth-child(12) { animation-delay: 5.5s; }
-        .loading-screen .greeting p:nth-child(13) { animation-delay: 6s; }
-        .loading-screen .greeting p:nth-child(14) { animation-delay: 6.5s; }
-        .loading-screen .greeting p:nth-child(15) { animation-delay: 7s; }
-        .loading-screen .greeting p:nth-child(16) { animation-delay: 7.5s; }
-        .loading-screen .greeting p:nth-child(17) { animation-delay: 8s; }
-        .loading-screen .greeting p:nth-child(18) { animation-delay: 8.5s; }
 
         /* Estilos para la página principal */
         body {
@@ -216,10 +207,14 @@
         .download-icon:hover {
             background-color: #003366;
         }
+        .download-icon i {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="loading-screen">
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loading-screen">
         <div class="greeting">
             <p>Hola</p>
             <p>Bonjour</p>
@@ -233,93 +228,143 @@
             <p>Merhaba</p>
             <p>Hej</p>
             <p>Hei</p>
-            <p>Hola</p>
             <p>Salut</p>
-            <p>Hola</p>
             <p>Guten Tag</p>
-            <p>Olá</p>
-            <p>Bonjour</p>
-            <p>Hello</p>
         </div>
     </div>
-    <div class="container">
+
+    <!-- Contenido principal -->
+    <div class="container" id="main-content">
         <div class="title-box">
-            <img src="https://via.placeholder.com/150" alt="Profile Picture">
-            <h1>Luis Eduardo Vázquez Núñez</h1>
-            <p>Ingeniero en Aeronáutica</p>
+            <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
             <div class="contact-info">
+                <h1>Luis Eduardo Vazquez Nuñez</h1>
                 <div class="contact-details">
                     <div>
                         <i class="fas fa-envelope"></i>
-                        <p><a href="mailto:example@example.com">example@example.com</a></p>
+                        <p>Email: <a href="mailto:luisvzne@gmail.com">luisvzne@gmail.com</a></p>
                     </div>
                     <div>
                         <i class="fas fa-phone"></i>
-                        <p>(+123) 456-7890</p>
+                        <p>Phone: +52 656-533-5118</p>
                     </div>
                     <div>
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Ciudad, País</p>
+                        <p>Location: Juárez, México</p>
+                    </div>
+                    <div>
+                        <i class="fab fa-linkedin"></i>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">LinkedIn Profile</a></p>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="main-content">
             <div class="left-panel">
                 <div class="section">
-                    <h2>Sobre Mí</h2>
-                    <p>Texto sobre ti...</p>
+                    <h2>Profile</h2>
+                    <p>Described as <span class="highlight">dedicated and eager to learn</span>, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
                 </div>
+
                 <div class="section">
-                    <h2>Experiencia</h2>
-                    <p>Texto sobre tu experiencia...</p>
+                    <h2>Education</h2>
+                    <p><strong>Chemical Laboratory Technology</strong>, IPN (2017 - 2019)</p>
+                    <p>Specializing in Chemical Laboratory Technology, gaining skills in chemical analysis, lab techniques, and safety protocols.</p>
+
+                    <p><strong>Aeronautical Engineering</strong>, UACJ (2020 - 2024)</p>
+                    <p>As an Aerospace Engineering student, I focus on designing and maintaining aircraft and spacecraft, driven by my passion for advancing aerospace technology.</p>
+                    <ul>
+                        <li>Thesis: Coatings and electrochemical corrosion</li>
+                    </ul>
                 </div>
+
                 <div class="section">
-                    <h2>Educación</h2>
-                    <p>Texto sobre tu educación...</p>
+                    <h2>Work Experience</h2>
+                    <p><strong>Planning Trainee</strong>, BRP (Dec 2024 - Aug 2024)</p>
+                    <p>Coordination, Supply chain Inventory management, Communication, Analysis, Planning.</p>
+                    <ul>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Meetings with Canadian and American suppliers</li>
+                        <li>Pre-shipment confirmation</li>
+                        <li>Tools: Microsoft Office (Excel - Macros), SAP</li>
+                    </ul>
                 </div>
+
                 <div class="section">
-                    <h2>Proyectos</h2>
-                    <p>Texto sobre tus proyectos...</p>
+                    <h2>Certificates</h2>
+                    <p><strong>Corrosion engineering and protection methods</strong> (Jan 2024)</p>
+                    <p><strong>Six Sigma</strong> (In progress)</p>
                 </div>
+
                 <div class="section">
-                    <h2>Habilidades</h2>
-                    <div class="skills">
-                        <p><span class="highlight">JavaScript:</span></p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
-                        <p><span class="highlight">Python:</span></p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                        <p><span class="highlight">C++:</span></p>
-                        <div class="skill-level"><div style="width: 60%;"></div></div>
-                    </div>
-                </div>
-                <div class="section">
-                    <h2>Idiomas</h2>
-                    <div class="languages">
-                        <p><span class="highlight">Español:</span> Nativo</p>
-                        <p><span class="highlight">Inglés:</span> Avanzado</p>
-                        <p><span class="highlight">Francés:</span> Intermedio</p>
-                    </div>
+                    <h2>Interests</h2>
+                    <p>I have a strong passion for engineering and technology, with a deep interest in the repair and maintenance of complex systems, from automobiles to electronic devices. My fascination extends to aeronautical engineering and the technical intricacies behind airplanes. Additionally, I am enthusiastic about the wide applications of technology, including advancements in the medical, automotive, and electronic industries, as well as my expertise in computers and programming.</p>
                 </div>
             </div>
+
             <div class="right-panel">
                 <div class="section">
-                    <h2>Contacto</h2>
-                    <p>Para más información, no dudes en ponerte en contacto conmigo.</p>
+                    <h2>Programming and Software</h2>
+                    <div class="skills">
+                        <p>LaTeX</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Python</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>MATLAB</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                        <p>Visual Basic</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Autocad</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>Ansys</p>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Solidworks</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>Minitab</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <p>SAP</p>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Languages</h2>
+                    <div class="languages">
+                        <p>English</p>
+                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <p>Spanish</p>
+                        <div class="skill-level"><div style="width: 90%;"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="download-icon">
+            <a href="Luis_Eduardo_Vazquez_Nunez_CV.pdf" download>
+                <i class="fas fa-download"></i>
+                <div>Download CV</div>
+            </a>
+        </div>
     </div>
-    <div class="download-icon" onclick="window.location.href='path/to/your/resume.pdf'">
-        ⬇️
-    </div>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
-        // Espera 9 segundos (o el tiempo total de la animación) antes de ocultar la pantalla de carga
-        setTimeout(function() {
-            document.querySelector('.loading-screen').classList.add('hidden');
-            document.querySelector('.container').style.opacity = '1';
-            document.querySelector('.container').style.visibility = 'visible';
-        }, 9000); // Ajusta el tiempo según la duración total de la animación
+        // Script para ocultar la pantalla de carga
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                mainContent.style.opacity = 1;
+                mainContent.style.visibility = 'visible';
+            }, 1000); // Tiempo de carga antes de ocultar la pantalla
+        });
     </script>
 </body>
 </html>
+
