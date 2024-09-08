@@ -32,7 +32,7 @@
         }
         .loading-screen .greeting {
             position: relative;
-            width: 200px; /* Ajusta el ancho según sea necesario */
+            width: 300px; /* Ajusta el ancho según sea necesario */
             height: 60px; /* Ajusta la altura según sea necesario */
             overflow: hidden;
         }
@@ -43,20 +43,25 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            animation: changeText 3.5s steps(10) infinite;
+            animation: changeText 4.5s steps(15) infinite;
         }
         @keyframes changeText {
             0% { transform: translateY(0); }
-            10% { transform: translateY(-100%); }
-            20% { transform: translateY(-200%); }
-            30% { transform: translateY(-300%); }
-            40% { transform: translateY(-400%); }
-            50% { transform: translateY(-500%); }
-            60% { transform: translateY(-600%); }
-            70% { transform: translateY(-700%); }
-            80% { transform: translateY(-800%); }
-            90% { transform: translateY(-900%); }
-            100% { transform: translateY(-1000%); }
+            6.66% { transform: translateY(-100%); }
+            13.33% { transform: translateY(-200%); }
+            20% { transform: translateY(-300%); }
+            26.66% { transform: translateY(-400%); }
+            33.33% { transform: translateY(-500%); }
+            40% { transform: translateY(-600%); }
+            46.66% { transform: translateY(-700%); }
+            53.33% { transform: translateY(-800%); }
+            60% { transform: translateY(-900%); }
+            66.66% { transform: translateY(-1000%); }
+            73.33% { transform: translateY(-1100%); }
+            80% { transform: translateY(-1200%); }
+            86.66% { transform: translateY(-1300%); }
+            93.33% { transform: translateY(-1400%); }
+            100% { transform: translateY(-1500%); }
         }
 
         body {
@@ -219,6 +224,18 @@
             <p>안녕하세요!</p>
             <p>Merhaba!</p>
             <p>你好!</p>
+            <p>Salut!</p>
+            <p>Olá!</p>
+            <p>Hej!</p>
+            <p>Hallo!</p>
+            <p>Hola!</p>
+            <p>שלום!</p>
+            <p>Szia!</p>
+            <p>नमस्ते!</p>
+            <p>สวัสดี!</p>
+            <p>مرحبا!</p>
+            <p>Salam!</p>
+            <p>Բարև!</p>
         </div>
     </div>
 
@@ -332,38 +349,21 @@
             </div>
         </div>
 
-            <div class="right-panel">
-                <div class="section">
-                    <h2>Additional Information</h2>
-                    <p>Include any other relevant details or sections that add value to your profile.</p>
-                </div>
-                <div class="download-icon" onclick="downloadCV()">
-                    <i class="fas fa-download"></i>
-                </div>
-            </div>
+        <div class="download-icon">
+            <i class="fas fa-download"></i>
+            <p>Download CV</p>
         </div>
     </div>
 
     <script>
-        function downloadCV() {
-            // Implement the function to download your CV
-            alert('Downloading CV...');
-        }
-
         window.addEventListener('load', () => {
-            const loadingScreen = document.getElementById('loading-screen');
-            const mainContent = document.getElementById('main-content');
-            
-            // Mantener la pantalla de carga visible durante 3.5 segundos
             setTimeout(() => {
-                // Ocultar la pantalla de carga
-                loadingScreen.classList.add('hidden');
-
-                // Mostrar el contenido principal con transición
-                mainContent.style.visibility = 'visible';
-                mainContent.style.opacity = '1';
-            }, 3500); // Tiempo en milisegundos
+                document.getElementById('loading-screen').classList.add('hidden');
+                document.getElementById('main-content').style.opacity = '1';
+                document.getElementById('main-content').style.visibility = 'visible';
+            }, 3000); // Tiempo de duración de la pantalla de carga (en milisegundos)
         });
     </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
