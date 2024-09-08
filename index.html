@@ -52,7 +52,6 @@
             transition: opacity 0.1s; /* Ajustar la transición a 0.1 segundos */
         }
 
-
         /* Estilos para la página principal */
         body {
             font-family: 'Playfair Display', serif;
@@ -72,10 +71,7 @@
             visibility: hidden; /* Ocultar inicialmente */
             transition: opacity 1s ease, visibility 1s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+
         .title-box {
             display: flex;
             background-color: #004080;
@@ -92,11 +88,7 @@
             margin-bottom: 20px;
             animation: bounceIn 1s ease;
         }
-        @keyframes bounceIn {
-            0% { transform: scale(0); opacity: 0; }
-            60% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); }
-        }
+
         .contact-info {
             font-size: 18px;
         }
@@ -108,6 +100,7 @@
         .contact-info a:hover {
             color: #ffd700;
         }
+
         .contact-details {
             display: flex;
             justify-content: center;
@@ -130,6 +123,8 @@
             margin: 5px 0 0 0;
             color: #fff;
         }
+
+        /* Secciones principales */
         .main-content {
             display: flex;
             margin-top: 20px;
@@ -137,21 +132,22 @@
         .left-panel, .right-panel {
             padding: 20px;
         }
-        .left-panel {
-            flex: 0.7;
-        }
-        .right-panel {
-            flex: 0.3;
-            background-color: #e6e6e6;
+
+        /* Distribución móvil con deslizamiento */
+        .sections-wrapper {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
         }
         .section {
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
+            min-width: 100%;
+            scroll-snap-align: start;
+            padding: 20px;
+            box-sizing: border-box;
         }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+
         .section h2 {
             color: #003366;
             font-weight: 700;
@@ -159,9 +155,18 @@
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
-        .section p {
-            line-height: 1.6;
+
+        /* Adaptación móvil */
+        @media (max-width: 768px) {
+            .sections-wrapper {
+                flex-direction: row;
+            }
+            .section {
+                width: 100vw;
+            }
         }
+
+        /* Estilos de habilidades y lenguaje */
         .skills, .languages {
             margin-bottom: 10px;
         }
@@ -176,39 +181,32 @@
             height: 100%;
             background-color: #003366;
         }
-        .highlight {
-            font-weight: 700;
-            color: #003366;
-        }
-        
+
         /* Estilos del botón de descarga */
         .download-icon {
-            position: fixed; /* Cambiar a fijo para que esté siempre visible */
+            position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: #004080;
             color: #fff;
-            width: 100px; /* Ajustar el tamaño del botón */
-            height: 100px; /* Ajustar el tamaño del botón */
-            border-radius: 50%; /* Hacer el botón circular */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añadir sombra más prominente */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             text-align: center;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            display: flex; /* Usar flexbox para centrar el icono */
-            justify-content: center; /* Centrar horizontalmente */
-            align-items: center; /* Centrar verticalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        
         .download-icon:hover {
             background-color: #003366;
-            transform: scale(1.05); /* Añadir un efecto de escala en el hover */
+            transform: scale(1.05);
         }
-        
         .download-icon i {
-            font-size: 48px; /* Aumentar el tamaño del icono */
+            font-size: 48px;
         }
-
 
     </style>
 </head>
@@ -236,7 +234,6 @@
             <p>مرحبا!</p>
             <p>Salam!</p>
             <p>Բարև!</p>
-            <p>こんにちは!</p>
         </div>
     </div>
 
@@ -261,16 +258,16 @@
                     </div>
                     <div>
                         <i class="fab fa-linkedin"></i>
-                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-nu%C3%B1ez-52b948301/" target="_blank">Luis Vazquez</a></p>
+                        <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-eduardo-v%C3%A1zquez-n%C3%BA%C3%B1ez-52b948301/" target="_blank">Luis Vazquez</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="main-content">
-            <div class="left-panel">
-                <div class="section">
-                    <h2>Profile</h2>
+        <!-- Sección principal con deslizamiento -->
+        <div class="sections-wrapper">
+            <div class="section">
+                <h2>Profile</h2>
                     <p>Described as dedicated and eager to learn, I am someone who thrives on embracing new knowledge and challenges. With a strong sense of responsibility, I consistently prioritize tasks and ensure completion with precision. Additionally, I am committed to being a reliable and trustworthy team player.</p>
                 </div>
 
@@ -311,85 +308,79 @@
                 </div>
             </div>
 
-            <div class="right-panel">
-                <div class="section">
-                    <h2>Programming and Software</h2>
-                    <div class="skills">
-                        <p>LaTeX</p>
+            <div class="section">
+                <h2>Programming</h2>
+                <ul>
+                        <li>LaTeX</li>
                         <div class="skill-level"><div style="width: 90%;"></div></div>
-                        <p>Python</p>
-                        <div class="skill-level"><div style="width: 80%;"></div></div>
+                        <li>Python</li>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <li>Visual Basic</li>
+                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <li>HTML</li>
+                        <div class="skill-level"><div style="width: 40%;"></div></div>
+                </ul>
+
+                <h2>Software</h2>
+                <ul>
                         <p>MATLAB</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
-                        <div class="skill-level"><div style="width: 90%;"></div></div>
-                        <p>Visual Basic</p>
                         <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Microsoft Office (Excel, Word, PowerPoint)</p>
+                        <div class="skill-level"><div style="width: 95%;"></div></div>
                         <p>Autocad</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
                         <p>Ansys</p>
                         <div class="skill-level"><div style="width: 60%;"></div></div>
                         <p>Solidworks</p>
                         <div class="skill-level"><div style="width: 80%;"></div></div>
                         <p>Minitab</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
+                        <div class="skill-level"><div style="width: 65%;"></div></div>
                         <p>SAP</p>
-                        <div class="skill-level"><div style="width: 70%;"></div></div>
-                    </div>
-                </div>
+                        <div class="skill-level"><div style="width: 60%;"></div></div>
+                        <p>Labview</p>
+                        <div class="skill-level"><div style="widht: 40%;"></div></div>
 
-                <div class="section">
-                    <h2>Languages</h2>
-                    <div class="languages">
+                </ul>
+                    
+                <h2>Languages</h2>
+                <ul>
                         <p>English</p>
                         <div class="skill-level"><div style="width: 80%;"></div></div>
                         <p>Spanish</p>
                         <div class="skill-level"><div style="width: 100%;"></div></div>
                         <p>French</p>
                         <div class="skill-level"><div style="width: 70%;"></div></div>
-                    </div>
-                </div>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download class="download-icon">
-            <i class="fas fa-file-pdf"></i> <!-- Ícono de PDF -->
-        </a>
-
-
-
+    <!-- Botón de descarga -->
+    <div class="download-icon" onclick="window.location.href='Luis_Eduardo_Vazquez_Nuñez.pdf'">
+        <i class="fas fa-download"></i>
+    </div>
 
     <script>
-         window.addEventListener('load', () => {
-            const totalDuration = 4; // Duración total en segundos
-            const durationPerGreeting = 0.2; // Duración de cada saludo en segundos
-            const numGreetings = document.querySelectorAll('.loading-screen .greeting p').length;
-            
-            const cycleDuration = numGreetings * durationPerGreeting; // Duración de un ciclo completo
-            const numCycles = Math.ceil(totalDuration / cycleDuration); // Número de ciclos necesarios
-        
-            let currentGreetingIndex = 0;
-        
-            const showNextGreeting = () => {
-                const greetings = document.querySelectorAll('.loading-screen .greeting p');
-                greetings.forEach((greeting, index) => {
-                    greeting.style.opacity = index === currentGreetingIndex ? '1' : '0';
-                });
-                currentGreetingIndex = (currentGreetingIndex + 1) % numGreetings;
-            };
-        
-            const intervalId = setInterval(() => {
-                showNextGreeting();
-            }, durationPerGreeting * 1000); // Convertir a milisegundos
-        
+        // Simulación de carga de pantalla
+        window.addEventListener('load', function () {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
             setTimeout(() => {
-                clearInterval(intervalId); // Detener el intervalo
-                document.getElementById('loading-screen').classList.add('hidden');
-                document.getElementById('main-content').style.opacity = '1';
-                document.getElementById('main-content').style.visibility = 'visible';
-            }, totalDuration * 1000); // Tiempo total en milisegundos
+                loadingScreen.classList.add('hidden');
+                mainContent.style.opacity = '1';
+                mainContent.style.visibility = 'visible';
+            }, 2000);
         });
+
+        // Deslizar saludos en la pantalla de carga
+        const greetings = document.querySelectorAll('.greeting p');
+        let currentGreetingIndex = 0;
+
+        setInterval(() => {
+            greetings[currentGreetingIndex].style.opacity = '0';
+            currentGreetingIndex = (currentGreetingIndex + 1) % greetings.length;
+            greetings[currentGreetingIndex].style.opacity = '1';
+        }, 100);
     </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
