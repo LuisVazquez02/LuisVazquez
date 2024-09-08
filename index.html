@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Luis Eduardo Vazquez Nuñez</title>
+    <title>CV - Luis Eduardo Vázquez Núñez</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
+
         /* Estilos de la pantalla de carga */
         .loading-screen {
             position: fixed;
@@ -24,18 +25,21 @@
             z-index: 9999;
             opacity: 1;
             visibility: visible;
-            transition: opacity 1s ease, visibility 1s ease;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
+        
         .loading-screen.hidden {
             opacity: 0;
             visibility: hidden;
         }
+        
         .loading-screen .greeting {
             position: relative;
             width: 300px; /* Ajusta el ancho según sea necesario */
             height: 60px; /* Ajusta la altura según sea necesario */
             overflow: hidden;
         }
+        
         .loading-screen .greeting p {
             position: absolute;
             width: 100%;
@@ -43,35 +47,18 @@
             margin: 0;
             line-height: 60px; /* Ajusta para centrar verticalmente */
             text-align: center;
-            opacity: 0;
-            animation: fadeInOut 3s linear;
+            opacity: 0; /* Inicialmente oculto */
+            animation: fadeInOut 1s forwards; /* Tiempo de animación de cada saludo */
         }
+        
         @keyframes fadeInOut {
             0% { opacity: 0; }
             10% { opacity: 1; }
-            30% { opacity: 1; }
-            40% { opacity: 0; }
+            40% { opacity: 1; }
+            50% { opacity: 0; }
             100% { opacity: 0; }
         }
-        .loading-screen .greeting p:nth-child(1) { animation-delay: 0s; }
-        .loading-screen .greeting p:nth-child(2) { animation-delay: 0.15s; }
-        .loading-screen .greeting p:nth-child(3) { animation-delay: 0.30s; }
-        .loading-screen .greeting p:nth-child(4) { animation-delay: 0.45s; }
-        .loading-screen .greeting p:nth-child(5) { animation-delay: 0.60s; }
-        .loading-screen .greeting p:nth-child(6) { animation-delay: 0.75s; }
-        .loading-screen .greeting p:nth-child(7) { animation-delay: 0.90s; }
-        .loading-screen .greeting p:nth-child(8) { animation-delay: 1.05s; }
-        .loading-screen .greeting p:nth-child(9) { animation-delay: 1.20s; }
-        .loading-screen .greeting p:nth-child(10) { animation-delay: 1.35s; }
-        .loading-screen .greeting p:nth-child(11) { animation-delay: 1.50s; }
-        .loading-screen .greeting p:nth-child(12) { animation-delay: 1.65s; }
-        .loading-screen .greeting p:nth-child(13) { animation-delay: 1.80s; }
-        .loading-screen .greeting p:nth-child(14) { animation-delay: 1.95s; }
-        .loading-screen .greeting p:nth-child(15) { animation-delay: 2.10s; }
-        .loading-screen .greeting p:nth-child(16) { animation-delay: 2.25s; }
-        .loading-screen .greeting p:nth-child(17) { animation-delay: 2.40s; }
-        .loading-screen .greeting p:nth-child(18) { animation-delay: 2.55s; }
-        .loading-screen .greeting p:nth-child(19) { animation-delay: 2.70s; }
+
 
         /* Estilos para la página principal */
         body {
@@ -92,6 +79,10 @@
             visibility: hidden; /* Ocultar inicialmente */
             transition: opacity 1s ease, visibility 1s ease;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         .title-box {
             display: flex;
             background-color: #004080;
@@ -100,11 +91,18 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
+            animation: fadeIn 1s ease forwards;
         }
         .title-box img {
             width: 150px;
             border-radius: 50%;
             margin-bottom: 20px;
+            animation: bounceIn 1s ease;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
         }
         .contact-info {
             font-size: 18px;
@@ -155,6 +153,11 @@
         }
         .section {
             margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .section h2 {
             color: #003366;
@@ -178,42 +181,70 @@
         }
         .skill-level div {
             height: 100%;
-            background-color: #004080;
+            background-color: #003366;
         }
-        .language-level {
-            display: flex;
-            justify-content: space-between;
+        .highlight {
+            font-weight: 700;
+            color: #003366;
         }
+    /* Estilos para el icono de descarga */
+    .download-icon {
+        position: fixed; /* Mantener en la pantalla */
+        bottom: 20px;
+        right: 20px;
+        background-color: #004080; /* Azul que armoniza con el fondo */
+        color: #000000;
+        padding: 15px;
+        border-radius: 12px; /* Esquinas más suaves */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más suave y amplia */
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .download-icon:hover {
+        background-color: #003366; /* Azul más oscuro al pasar el cursor */
+        transform: scale(1.05); /* Efecto de aumento */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el cursor */
+    }
+    
+    .download-icon i {
+        font-size: 24px; /* Tamaño del ícono */
+        margin-bottom: 5px; /* Espacio entre ícono y texto */
+    }
+    
+    .download-icon div {
+        font-size: 14px; /* Tamaño del texto */
+        font-weight: bold; /* Texto en negrita */
+        margin-top: 5px; /* Espacio entre texto e ícono */
+    }
+
+
+
     </style>
 </head>
 <body>
-    <div class="loading-screen" id="loadingScreen">
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loading-screen">
         <div class="greeting">
             <p>Hola</p>
-            <p>Hello</p>
             <p>Bonjour</p>
-            <p>Hola</p>
             <p>Hello</p>
-            <p>Bonjour</p>
-            <p>Hola</p>
-            <p>Hello</p>
-            <p>Bonjour</p>
-            <p>Hola</p>
-            <p>Hello</p>
-            <p>Bonjour</p>
-            <p>Hola</p>
-            <p>Hello</p>
-            <p>Bonjour</p>
-            <p>Hola</p>
-            <p>Hello</p>
-            <p>Bonjour</p>
-            <p>Hola</p>
+            <p>Ciao</p>
+            <p>Hallo</p>
+            <p>Olá</p>
+            <p>Привет</p>
+            <p>こんにちは</p>
+            <p>안녕하세요</p>
+            <p>Merhaba</p>
+            <p>Hej</p>
+            <p>Hei</p>
+            <p>Salut</p>
+            <p>Guten Tag</p>
         </div>
     </div>
 
-    <!-- Página principal (deja esto vacío para completar después) -->
-    <div class="container" id="mainContent">
-           <!-- Contenido principal -->
+    <!-- Contenido principal -->
     <div class="container" id="main-content">
         <div class="title-box">
             <img src="Luis_Foto.jpg" alt="Luis Eduardo Vazquez Nuñez">
@@ -326,23 +357,34 @@
         </div>
 
         <!-- Icono de descarga -->
-        <div class="download-section">
-            <a href="Luis_Eduardo_Vazquez_Nunez.pdf" download="Luis_Eduardo_Vazquez_Nunez.pdf" class="download-link">
-                <i class="fas fa-file-pdf download-icon"></i>
-                <div class="download-text">Download CV</div>
+        <div class="download-icon">
+            <a href="Luis_Eduardo_Vazquez_Nuñez.pdf" download="Luis_Eduardo_Vazquez_Nuñez.pdf">
+                <i class="fas fa-file-pdf"></i>
+                <div>Download CV</div>
             </a>
         </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-                document.getElementById('mainContent').style.opacity = 1;
-                document.getElementById('mainContent').style.visibility = 'visible';
-            }, 3000); // Duración de la pantalla de carga en milisegundos
+    <!-- Scripts -->
+    window.addEventListener('load', () => {
+        const totalDuration = 5000; // Tiempo total de la pantalla de carga en milisegundos
+        const numberOfGreetings = 18; // Número total de saludos
+        const timePerGreeting = totalDuration / numberOfGreetings; // Tiempo por saludo
+    
+        // Establece el tiempo de animación y el retraso para cada saludo
+        document.querySelectorAll('.loading-screen .greeting p').forEach((element, index) => {
+            element.style.animationDuration = `${timePerGreeting}ms`;
+            element.style.animationDelay = `${index * timePerGreeting}ms`;
         });
+    
+        // Transición a la página principal después del tiempo total
+        setTimeout(() => {
+            document.getElementById('loading-screen').classList.add('hidden');
+            document.getElementById('main-content').style.opacity = '1';
+            document.getElementById('main-content').style.visibility = 'visible';
+        }, totalDuration); // Tiempo total de la pantalla de carga
+    });
+
+        
     </script>
 </body>
 </html>
-
