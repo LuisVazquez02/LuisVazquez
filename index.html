@@ -147,6 +147,7 @@
         .main-content {
             display: flex;
             margin-top: 20px;
+            flex-wrap: wrap; /* Permite que los paneles se envuelvan en pantallas pequeñas */
         }
         
         .left-panel, .right-panel {
@@ -234,6 +235,16 @@
             font-size: 48px; /* Aumentar el tamaño del icono */
         }
         
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column; /* Apilar los paneles uno sobre otro en pantallas pequeñas */
+            }
+        
+            .left-panel, .right-panel {
+                flex: 1 1 100%; /* Hacer que ambos paneles ocupen todo el ancho disponible */
+            }
+        }
+        
         @media (max-width: 480px) {
             .contact-details {
                 flex-direction: row; /* Mantener los elementos en una fila */
@@ -254,7 +265,12 @@
             .contact-info {
                 font-size: 1rem; /* Mantener el tamaño de fuente adecuado en pantallas pequeñas */
             }
+        
+            .section {
+                margin-bottom: 10px; /* Reducir el margen inferior para pantallas más pequeñas */
+            }
         }
+
 
 
         
